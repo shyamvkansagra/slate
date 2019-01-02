@@ -1,17 +1,16 @@
 ---
-title: API Reference
+title: Swym JS API Info v2.0
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://swym.it/' target='_blank'>Visit our website</a>
 
 includes:
+  - publicAPI
+  - sendDataToService
+  - retrieveDataFromService
   - errors
 
 search: true
@@ -19,53 +18,21 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+This document lists and explains various front-end javascript APIs exposed by Swym. One can refer this documentation to get the formal knowledge on how to manipulate front-end behaviour of Swym’s applications according to the respective needs. In case of any incorrect or incomplete information, please reach out to the developers’ team at Swym.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+In this documentation, we have covered following topics for an individual API:
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+- What does a particular API do?
+
+- When it should be called?
+
+- What are the arguments?
+
+- Example request and response
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
+There is no other authentication required except from the one which was provided while installation of Swym application. To use these APIs, only initialization of <code>_swat</code> object in window is required. Make sure it is available before calling the custom workflows. You can check the same by using simple <code>if</code> condition on <code>window._swat</code> in your code.
 
 ## Get All Kittens
 
