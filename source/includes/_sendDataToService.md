@@ -1,4 +1,4 @@
-# Sending Data to the service
+# Sending Data to service
 
 ## trackPageView
 
