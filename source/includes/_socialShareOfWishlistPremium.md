@@ -1,6 +1,6 @@
-# Using Premium APIs - Social sharing of Wishlist
+# Social sharing of Wishlist (Premium)
 
-## shareWishlistSocial
+## Share wishlist on social media
 
 This API creates the unique URL for a particular sharing platform and opens a new dialog in that platform to perform the sharing step. For eg., for facebook, the share page will be opened in a new window.
 
@@ -22,7 +22,7 @@ platform | string | The key to one of the sharing platforms. By default, one of 
 note | string | Some platforms allow to send a custom note along with shared url. This field is to capture that message. Amongst the defaults, at the moment, notes only work with twitter.
 errCallBack | function | Function that gets called if there is an error. Called with error message as argument.
 
-## generateSharedWishlistURL
+## Generate shareable wishlist URL
 
 A lower level API that returns the unique wishlist URL that can be shared anywhere. This URL will return the user who clicks on it back to the site into the default share wishlist page. This page can be overridden from the retailer settings if need be.
 
