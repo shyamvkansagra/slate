@@ -4,7 +4,18 @@ The Swym platform supports having multiple wishlists for a user, eg: my lounge, 
 
 ## Get products for a collection
 
-Write something here for fetchWishlistWRTHashtag
+```javascript
+window._swat.fetchWishlistWRTHashtag(function(products){
+  // Render products
+}, "Summer Collection");
+```
+
+When we want to get the information about various wishlist related activities based on hashtags, we can use this API. We will get an array of products in response.
+
+Argument | Type | Description
+--------- | ------- | -----------
+renderFn | function | A function to render the response product JSONs
+hashtag | string | Name of the hashtag
 
 ## Add collections to a product
 
@@ -25,8 +36,8 @@ Argument | Type | Description
 --------- | ------- | -----------
 epi | int/string | External product unique id (variant level if applicable)
 Collections to add | array | Array of hashtags eg: ["My Lounge"]
-Success callback | function | Optional. Success callback function which will be called upon successful response.
-Error callback | function | Optional. Error callback function which will be called if unsuccessful response.
+Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
+Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
 
 <aside class="success">
 This should be followed by a call to addToWishlist. To retrieve the collection for a wishlisted product, every object has a property “hashtags” containing the array of collections set for the product.
@@ -51,8 +62,8 @@ Argument | Type | Description
 --------- | ------- | -----------
 collection | string | e.g. “My Lounge”
 productsToAdd | array | List of variant ids to add to the collection
-Success callback | function | Optional. Success callback function which will be called upon successful response.
-Error callback | function | Optional. Error callback function which will be called if unsuccessful response.
+Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
+Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
 
 <aside class="success">
 This should be followed by a call to addToWishlist. To retrieve the collection for a wishlisted product, every object has a property “hashtags” containing the array of collections set for the product.
@@ -95,8 +106,8 @@ Argument | Type | Description
 --------- | ------- | -----------
 epi | int/string | External product unique id (variant level if applicable)
 collectionsToRemove | array | An array of collections to remove
-Success callback | function | Optional. Success callback function which will be called upon successful response.
-Error callback | function | Optional. Error callback function which will be called if unsuccessful response.
+Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
+Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
 
 
 ## Remove products from a collection
@@ -116,8 +127,8 @@ Argument | Type | Description
 --------- | ------- | -----------
 collection | string | Collection name
 productsToRemove | array | An array of products to remove
-Success callback | function | Optional. Success callback function which will be called upon successful response.
-Error callback | function | Optional. Error callback function which will be called if unsuccessful response.
+Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
+Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
 
 ## Remove a collection
 
@@ -134,5 +145,5 @@ window._swat.removeWishlistCollection(
 Argument | Type | Description
 --------- | ------- | -----------
 collectionsToRemove | array | An array of collections to remove
-Success callback | function | Optional. Success callback function which will be called upon successful response.
-Error callback | function | Optional. Error callback function which will be called if unsuccessful response.
+Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
+Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.

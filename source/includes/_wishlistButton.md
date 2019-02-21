@@ -15,8 +15,6 @@ Tip - Before showing a button for 'Add to Wishlist', it is best to first check i
 
 Please refer our blog/guide for directly connecting button to wishlist actions here - [Wishlist Plus Customization Cheatsheet](http://swym.it/wishlist-plus-customizations-cheatsheet/)
 
-> In this example, the request adds the product variant to the wishlist. Please note that the parameters below are mandatory ones (epi, empi, du and iu).
-
 ```javascript
 window._swat.addToWishList(
   {
@@ -42,12 +40,13 @@ iu | string | Image-uri - Without protocol so protocol can be decided while rend
 pr | float | Price
 For response | function | A callback function, which takes a single argument (JSON response from the swym service)
 
+In the example, the request adds the product variant to the wishlist.
+Please note that the these parameters are mandatory ones (epi, empi, du and iu).
+
 
 ## Remove from wishlist
 
 Removes a previously added wishlist event. Please refer to the example. You can call this method once the <code>window._swat</code> object is initialized. This API can be used for the same scenarios as <code>addToWishList</code>.
-
-> In this example, removeFromWishList removes a previously added entry from the wish list.
 
 ```javascript
 window._swat.removeFromWishList(
@@ -73,6 +72,8 @@ empi | int/string | External product master id (if there is a group product id w
 iu | string | Image-uri - Without protocol so protocol can be decided while rendering to http or https
 pr | float | Price
 For response | function | A callback function, which takes a single argument (JSON response from the swym service)
+
+In the example, removeFromWishList removes a previously added entry from the wish list.
 
 ## Get all tracked products
 
@@ -147,24 +148,16 @@ callbackFn | function | A callback function with a single argument, which is a  
 
 ## Initialize custom button
 
-> Let's say we have added `data-swaction='addToWishlist'` and `product-grid` is the class name for container
-
-```javascript
-window._swat.initializeActionButtons('.product-grid');
-```
-
-> Let's say custom button selector is `[my-custom-wishlist-btn]` and `product-grid` is the class name for container
+Let's say we have a custom button which should act as a wishlist button for a retailer. In this case, we need to add `data-swaction='addToWishlist'` or `data-swaction='addToWatchlist'` (depending on which app it is) attribute to that particular custom button HTML element on the retailer's store. We can use any custom selector as well if we don't want to use the `data-swaction`. Now, during run-time, all such buttons will be checked and initialized by Swym. In order to do that, we have to call this API: `initializeActionButtons`.
 
 ```javascript
 window._swat.initializeActionButtons('.product-grid', '[my-custom-wishlist-btn]');
 ```
 
-Let's say we have a custom button which should act as a wishlist button for a retailer. In this case, we need to add `data-swaction='addToWishlist'` or `data-swaction='addToWatchlist'` (depending on which app it is) attribute to that particular custom button HTML element on the retailer's store. We can use any custom selector as well if we don't want to use the `data-swaction`. Now, during run-time, all such buttons will be checked and initialized by Swym. In order to do that, we have to call this API: `initializeActionButtons`.
-
 Argument | Type | Description
 --------- | ------- | -----------
 containerSelector | string | A container selector which is parent of all such custom wishlist buttons
-selector | string | A selector for custom wishlist button, by default it is `data-swaction`
+selector<span>optional</span> | string | A selector for custom wishlist button, by default it is `data-swaction`
 
 ## Trigger variant change
 

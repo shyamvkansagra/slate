@@ -30,5 +30,5 @@ window._swat.renderWishlistCount(anchorElem.querySelector('.swym-anchor-badge'),
 Argument | Type | Description
 --------- | ------- | -----------
 elem | DOM element | A DOM element to update the badge on
-callback | function | A callback function with an object that gives event after default actions
-timeout | integer | Miliseconds after which you want to update the render count on screen
+callback<span>optional</span> | function | A callback function with an object that gives event after default actions
+timeout<span>optional</span> | integer | Miliseconds after which you want to update the render count on screen

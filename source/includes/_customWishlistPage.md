@@ -102,7 +102,7 @@ callbackFn | function | A callback function which takes a single argument (JSON 
 emailId | string | An email Id to send the favorites to
 fromEmailId | string | The sender's email id / name
 note | string | Some personal note that needs to be sent along with the email contents
-hashtag | string | If collections of wishlist is used, a particular collection name that needs to be shared (optional)
+hashtag<span>optional</span> | string | If collections of wishlist is used, a particular collection name that needs to be shared
 
 
 ## Add product to cart
@@ -155,36 +155,24 @@ errorFn | function | A function which will be called if case of any errors
 
 ## Connect device to email address
 
-Request  the swym service to send a one time email validation link.
+Request  the swym service to send a one time email validation link. A mail will be sent on the email address which is given as argument to this API. Upon clicking "Confirm", user will be redirected to site and authenticated.
 
-<aside class="notice">
-Currently, the validation link is not sent via email. Instead the validation link is logged to the local (javascript/browser console).  Once, you click on this link, that browser is assigned to the requested email.  Your next call will automatically fetch the updated credentials.
-</aside>
-
-<aside class="notice">You can refresh these credentials either explicitly by clicking on “Refresh Auth Credentials”. Although this is typically not needed.</aside>
-
-> Example response
-
-```html
-<form name="ra">
-  <input type="text" name="email">
-  <input
-    type="button"
-    value="Request Email Validation"
-    onClick="window._swat.remoteAuthRequest(function(r) {}, ra.email.value)"
-  >
-</form>
+```javascript
+window._swat.remoteAuthRequest(
+  function(resp) { console.log(resp); },
+  function(err) { console.log(err); },
+  "my.email@domain.com"
+); 
 ```
 
 Argument | Type | Description
 --------- | ------- | -----------
 callbackFn | function | A callback function with a single argument, which is a  JSON response called by remoteAuthRequest
+errorFn | function | A function which will be called in case of any errors
 email address | string | A valid email address
 
 
 ## Check if device has an associated email
-
-Query the swym service to see if the current browser is authenticated.
 
 > Example request
 
@@ -212,6 +200,8 @@ window._swat.authCheck(
   "authn": false
 }
 ```
+
+Query the swym service to see if the current browser is authenticated.
 
 Argument | Type | Description
 --------- | ------- | -----------

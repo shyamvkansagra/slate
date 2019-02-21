@@ -20,7 +20,7 @@ Argument | Type | Description
 clickEvent | object | event object of click listener event
 evtMap | object | An object consisting epi, empi and iu
 callbackFn | function | A callback function which will be called on success
-renderIntoNode | DOM node | A DOM node where you want to show addToWatchlist as popup/inline form
+renderIntoNode<span>optional</span> | DOM node | A DOM node where you want to show addToWatchlist as popup/inline form
 
 
 ## Request in-stock alert for a product
@@ -49,4 +49,4 @@ medium | string | What id is collected
 product | object | Object with keys - {"epi" (variant id), "empi" (product master id), "iu" (image url), "pr" (price)}
 callbackFn | function | Function that gets called after a successful HTTP API call
 errorFn | function | Function that gets called when an error occurs
-addToMailingList | boolean | Boolean to tell if user opted in or out from the mailing list (Note:- requires mailing list feature to be set up from Swym's end)
+addToMailingList<span>optional</span> | boolean | Boolean to tell if user opted in or out from the mailing list (Note:- requires mailing list feature to be set up from Swym's end)

@@ -407,6 +407,12 @@ html, body {
       code {
         white-space: nowrap;
       }
+      span {
+        color: gray;
+        display: -webkit-box;
+        font-weight: 100;
+        font-size: 12px;
+      }
     }
 
     th {
