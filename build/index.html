@@ -1,0 +1,1684 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Swym JS API Info v2.0</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#wishlist-button" class="toc-h1 toc-link" data-title="Wishlist button">Wishlist button</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-to-wishlist" class="toc-h2 toc-link" data-title="Add to wishlist">Add to wishlist</a>
+                  </li>
+                  <li>
+                    <a href="#remove-from-wishlist" class="toc-h2 toc-link" data-title="Remove from wishlist">Remove from wishlist</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-tracked-products" class="toc-h2 toc-link" data-title="Get all tracked products">Get all tracked products</a>
+                  </li>
+                  <li>
+                    <a href="#initialize-custom-button" class="toc-h2 toc-link" data-title="Initialize custom button">Initialize custom button</a>
+                  </li>
+                  <li>
+                    <a href="#trigger-variant-change" class="toc-h2 toc-link" data-title="Trigger variant change">Trigger variant change</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wishlist-count" class="toc-h1 toc-link" data-title="Wishlist count">Wishlist count</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user-39-s-wishlist-count" class="toc-h2 toc-link" data-title="Get user's wishlist count">Get user's wishlist count</a>
+                  </li>
+                  <li>
+                    <a href="#render-user-39-s-wishlist-count" class="toc-h2 toc-link" data-title="Render user's wishlist count">Render user's wishlist count</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#custom-wishlist-page" class="toc-h1 toc-link" data-title="Custom wishlist page">Custom wishlist page</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-tracked-products" class="toc-h2 toc-link" data-title="Get all tracked products">Get all tracked products</a>
+                  </li>
+                  <li>
+                    <a href="#get-products-by-event-type" class="toc-h2 toc-link" data-title="Get products by event type">Get products by event type</a>
+                  </li>
+                  <li>
+                    <a href="#email-wishlist" class="toc-h2 toc-link" data-title="Email Wishlist">Email Wishlist</a>
+                  </li>
+                  <li>
+                    <a href="#add-product-to-cart" class="toc-h2 toc-link" data-title="Add product to cart">Add product to cart</a>
+                  </li>
+                  <li>
+                    <a href="#get-complete-product-details" class="toc-h2 toc-link" data-title="Get complete product details">Get complete product details</a>
+                  </li>
+                  <li>
+                    <a href="#connect-device-to-email-address" class="toc-h2 toc-link" data-title="Connect device to email address">Connect device to email address</a>
+                  </li>
+                  <li>
+                    <a href="#check-if-device-has-an-associated-email" class="toc-h2 toc-link" data-title="Check if device has an associated email">Check if device has an associated email</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-wishlist-event" class="toc-h2 toc-link" data-title="Update a wishlist event">Update a wishlist event</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#in-stock-alerts" class="toc-h1 toc-link" data-title="In-stock alerts">In-stock alerts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#show-quot-email-me-when-available-quot-widget" class="toc-h2 toc-link" data-title="Show "Email me when available" widget">Show "Email me when available" widget</a>
+                  </li>
+                  <li>
+                    <a href="#request-in-stock-alert-for-a-product" class="toc-h2 toc-link" data-title="Request in-stock alert for a product">Request in-stock alert for a product</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#collections-of-wishlist-premium" class="toc-h1 toc-link" data-title="Collections of Wishlist (Premium)">Collections of Wishlist (Premium)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-products-for-a-collection" class="toc-h2 toc-link" data-title="Get products for a collection">Get products for a collection</a>
+                  </li>
+                  <li>
+                    <a href="#add-collections-to-a-product" class="toc-h2 toc-link" data-title="Add collections to a product">Add collections to a product</a>
+                  </li>
+                  <li>
+                    <a href="#add-products-to-a-collections" class="toc-h2 toc-link" data-title="Add products to a collections">Add products to a collections</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-collections" class="toc-h2 toc-link" data-title="Get all collections">Get all collections</a>
+                  </li>
+                  <li>
+                    <a href="#remove-collections-from-a-product" class="toc-h2 toc-link" data-title="Remove collections from a product">Remove collections from a product</a>
+                  </li>
+                  <li>
+                    <a href="#remove-products-from-a-collection" class="toc-h2 toc-link" data-title="Remove products from a collection">Remove products from a collection</a>
+                  </li>
+                  <li>
+                    <a href="#remove-a-collection" class="toc-h2 toc-link" data-title="Remove a collection">Remove a collection</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#social-sharing-of-wishlist-premium" class="toc-h1 toc-link" data-title="Social sharing of Wishlist (Premium)">Social sharing of Wishlist (Premium)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#share-wishlist-on-social-media" class="toc-h2 toc-link" data-title="Share wishlist on social media">Share wishlist on social media</a>
+                  </li>
+                  <li>
+                    <a href="#generate-shareable-wishlist-url" class="toc-h2 toc-link" data-title="Generate shareable wishlist URL">Generate shareable wishlist URL</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#enum-reference" class="toc-h1 toc-link" data-title="Enum reference">Enum reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#eventtype-et" class="toc-h2 toc-link" data-title="EventType (et)">EventType (et)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#glossary" class="toc-h1 toc-link" data-title="Glossary">Glossary</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#devicecategory-dcat" class="toc-h2 toc-link" data-title="DeviceCategory (dcat)">DeviceCategory (dcat)</a>
+                  </li>
+                  <li>
+                    <a href="#json-key-reference-for-sending-pageview-wishlist-cart-events" class="toc-h2 toc-link" data-title="JSON key reference for sending pageview/wishlist/cart events">JSON key reference for sending pageview/wishlist/cart events</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#custom-implementation" class="toc-h1 toc-link" data-title="Custom implementation">Custom implementation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#track-pageview" class="toc-h2 toc-link" data-title="Track pageview">Track pageview</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://swym.it/' target='_blank'>Visit our website</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<blockquote>
+<p>Go to your retailer&#39;s store where swym &#39;wishlist&#39; app is installed and perform the following on console of any product&#39;s page:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">// This command sets event type as 4 for this product,</span>
+<span class="c1">// '4' is add to wishlist event</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">SwymPageData</span><span class="p">.</span><span class="nx">et</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</code></pre>
+<blockquote>
+<p>After that, execute the following to add that product to wishlist:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">// This will add product to wishlist</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishlist</span><span class="p">(</span><span class="nx">SwymPageData</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)});</span>
+</code></pre>
+<blockquote>
+<p>To verify whether the product was added to wishlist or not, use the following command:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">// In the response of this call, check for et 4.</span>
+<span class="c1">// et 4 means product is added to wishlist</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span> <span class="p">})</span>
+</code></pre>
+<p>This document lists and explains various front-end javascript APIs exposed by Swym. One can refer this documentation to get the formal knowledge on how to manipulate front-end behaviour of Swym’s applications according to the respective needs. In case of any incorrect or incomplete information, please reach out to the developers’ team at Swym.</p>
+
+<p>In this documentation, we have covered following topics for an individual API:</p>
+
+<ul>
+<li>What does a particular API do?</li>
+<li>When it should be called?</li>
+<li>What are the arguments?</li>
+<li>Example request and response</li>
+</ul>
+<h1 id='errors'>Errors</h1>
+<p>Ideally there should not be any error while calling these APIs, but in case if you encounter any such interruptions in the flow, check the console of your web page and see if that error is coming from our end. If yes, reach out to our developers’ team. In any case, we are monitoring our APIs. So if any exceptions or errors are generated, we can check the logs and fix it for you even before you encounter them.</p>
+
+<p>The Swym JS APIs use the following error codes if error is from server side:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- You are not allowed to request this data.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified requested data could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a API with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t accepted.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The requested API has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re raising too many requests! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+<h1 id='wishlist-button'>Wishlist button</h1><h2 id='add-to-wishlist'>Add to wishlist</h2><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishList</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="s2">"epi"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s2">"du"</span><span class="p">:</span> <span class="s2">"https://yourstore.com/products/your-awesome-product"</span><span class="p">,</span>
+    <span class="s2">"empi"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s2">"iu"</span> <span class="p">:</span> <span class="s2">"//www.understandfrance.org/Images/AsterixObelix.jpg"</span><span class="p">,</span>
+    <span class="s2">"pr"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">"stk"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s2">"variants"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"Blue / XL"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}]</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Added to wishlist'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="c1">// example with cprops and hashtags</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishList</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="s2">"epi"</span><span class="p">:</span> <span class="mi">456</span><span class="p">,</span>
+    <span class="s2">"du"</span><span class="p">:</span> <span class="s2">"https://yourstore.com/products/your-another-awesome-product"</span><span class="p">,</span>
+    <span class="s2">"empi"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+    <span class="s2">"iu"</span> <span class="p">:</span> <span class="s2">"//www.understandfrance.org/Images/AsterixObelix2.jpg"</span><span class="p">,</span>
+    <span class="s2">"pr"</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="s2">"stk"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">"variants"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"Yellow / XL"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}],</span>
+    <span class="s2">"cprops"</span><span class="p">:</span> <span class="p">{</span><span class="na">personalised</span><span class="p">:</span> <span class="kc">true</span><span class="p">},</span>
+    <span class="s2">"hashtags"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"summer dresses"</span><span class="p">,</span> <span class="s2">"party wear"</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Added to wishlist'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<p>Adds a new wishlist event. Please refer to the example. You can call this method once the window._swat object is initialized. This API operates at the epi, i.e. product variant level as set by the store.</p>
+
+<p>This API can be called in the below scenarios,</p>
+
+<ul>
+<li>&#39;onclick&#39; button on a product page</li>
+<li>&#39;onclick&#39; button on a product quick view</li>
+<li>&#39;onclick&#39; buttons on a collections page with multiple products</li>
+<li>&#39;onclick&#39; buttons on a widget of multiple products, Eg: related products, top wishlist products, etc.</li>
+</ul>
+
+<p>Tip - Before showing a button for &#39;Add to Wishlist&#39;, it is best to first check if the product or variant is already in the wishlist, by using the &quot;fetch&quot; API.</p>
+
+<p>Please refer our blog/guide for directly connecting button to wishlist actions here - <a href="http://swym.it/wishlist-plus-customizations-cheatsheet/">Wishlist Plus Customization Cheatsheet</a></p>
+
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>epi</td>
+<td>int/string</td>
+<td>External product unique id (variant level if applicable)</td>
+</tr>
+<tr>
+<td>empi</td>
+<td>int/string</td>
+<td>External product master id (if there is a group product id with different variant ids)</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>string</td>
+<td>Image-uri - Without protocol so protocol can be decided while rendering to http or https</td>
+</tr>
+<tr>
+<td>pr</td>
+<td>float</td>
+<td>Price</td>
+</tr>
+<tr>
+<td>cprops<span>optional</span></td>
+<td>object</td>
+<td>data object that can be used to pass any custom data about the event</td>
+</tr>
+<tr>
+<td>hashtags<span>optional</span></td>
+<td>array</td>
+<td>array of wishlist collections to which this product needs to be added</td>
+</tr>
+<tr>
+<td>For response</td>
+<td>function</td>
+<td>A callback function, which takes a single argument (JSON response from the swym service)</td>
+</tr>
+</tbody></table>
+
+<p>In the example, the request adds the product variant to the wishlist.
+Please note that the these parameters are mandatory ones (epi, empi, du and iu).</p>
+<h2 id='remove-from-wishlist'>Remove from wishlist</h2>
+<p>Removes a previously added wishlist event. Please refer to the example. You can call this method once the <code>window._swat</code> object is initialized. This API can be used for the same scenarios as <code>addToWishList</code>.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeFromWishList</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="s2">"epi"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s2">"du"</span><span class="p">:</span> <span class="s2">"https://yourstore.com/products/your-awesome-product"</span><span class="p">,</span>
+    <span class="s2">"empi"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s2">"iu"</span> <span class="p">:</span> <span class="s2">"//www.understandfrance.org/Images/AsterixObelix.jpg"</span><span class="p">,</span>
+    <span class="s2">"pr"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">"stk"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s2">"variants"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"Blue / XL"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}]</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Removed to wishlist'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>epi</td>
+<td>int/string</td>
+<td>External product unique id (variant level if applicable)</td>
+</tr>
+<tr>
+<td>empi</td>
+<td>int/string</td>
+<td>External product master id (if there is a group product id with different variant ids)</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>string</td>
+<td>Image-uri - Without protocol so protocol can be decided while rendering to http or https</td>
+</tr>
+<tr>
+<td>pr</td>
+<td>float</td>
+<td>Price</td>
+</tr>
+<tr>
+<td>For response</td>
+<td>function</td>
+<td>A callback function, which takes a single argument (JSON response from the swym service)</td>
+</tr>
+</tbody></table>
+
+<p>In the example, removeFromWishList removes a previously added entry from the wish list.</p>
+<h2 id='get-all-tracked-products'>Get all tracked products</h2>
+<blockquote>
+<p>Example request</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'demo'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">r</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>Exmaple response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"di"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid.ts"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-16"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">Blue</span><span class="se">\"</span><span class="s2">:123}]"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product - Blue"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"et"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"raw-du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"act"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"empi"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourstorepid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"epi"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//yourstore.com/images/your-awesome-product-123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personal computer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pr"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accessories"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mac"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-variant"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"di"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid.ts"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-16"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">Red</span><span class="se">\"</span><span class="s2">:134}]"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product - Red"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"et"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"raw-du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=134"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"act"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"empi"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=134"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourstorepid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"epi"</span><span class="p">:</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//yourstore.com/images/your-awesome-product-134"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personal computer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pr"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accessories"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mac"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-variant"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Fetch the history of events from the swym service.  The set of events fetched from the swym service is sorted by date (reverse chronological).  You can call this method once the <code>window._swat</code> object is initialized.</p>
+
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>A callback function with a single argument, which is a  JSON response on success.</td>
+</tr>
+</tbody></table>
+<h2 id='initialize-custom-button'>Initialize custom button</h2>
+<p>Let&#39;s say we have a custom button which should act as a wishlist button for a retailer. In this case, we need to add <code>data-swaction=&#39;addToWishlist&#39;</code> or <code>data-swaction=&#39;addToWatchlist&#39;</code> (depending on which app it is) attribute to that particular custom button HTML element on the retailer&#39;s store. We can use any custom selector as well if we don&#39;t want to use the <code>data-swaction</code>. Now, during run-time, all such buttons will be checked and initialized by Swym. In order to do that, we have to call this API: <code>initializeActionButtons</code>.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">initializeActionButtons</span><span class="p">(</span><span class="s1">'.product-grid'</span><span class="p">,</span> <span class="s1">'[my-custom-wishlist-btn]'</span><span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>containerSelector</td>
+<td>string</td>
+<td>A container selector which is parent of all such custom wishlist buttons</td>
+</tr>
+<tr>
+<td>selector<span>optional</span></td>
+<td>string</td>
+<td>A selector for custom wishlist button, by default it is <code>data-swaction</code></td>
+</tr>
+</tbody></table>
+<h2 id='trigger-variant-change'>Trigger variant change</h2>
+<p>In Shopify, each product has multiple variants. In many stores, it is very important to capture events at a variant level, such as the variant id, variant price, variant stock, variant options, variant image, etc. The end user interacts with the product from the product details page, a collections page, a quick view popup or a widget of products. Swym provides support for managing events at product and variant levels for each of those scenarios. Find the detailed explanation below:</p>
+
+<p>For a product details page - Let’s take the “onload” and “afterload”  scenarios and break it down to use cases -</p>
+
+<p>“onload” - When a product page is opened, following are the usual patterns,</p>
+
+<ul>
+<li>First variant is picked</li>
+<li>First variant that is in stock and available to purchase is picked</li>
+<li>The variant specified in the query parameter <code>variant=&lt;<variantid>&gt;</code> to the url is picked</li>
+</ul>
+
+<p>For most themes, scenarios 1 and 3 are common, but there are no defined rules. Also, it can be the theme developer’s choice as how to control product details page. Swym has inbuilt support for scenarios 1 and 3. For ensuring scenario 2, the below snippet needs to be called to let Swym know of the current variant, once <code>window._swat</code> is initialized.</p>
+
+<aside><code>window.triggerSwymVariantEvent(variantid);</code> // variantid is the currently selected variant id</aside>
+
+<p>“afterload” - After page is opened, user can switch variants. Most themes use Shopify’s <code>Shopify.OptionSelector</code> library to enable variant selection elegantly. Swym has inbuilt support for this plugin. However there are no defined rules for this and hence in cases where the implementation is different, the below snippet needs to be called to let Swym know of the current variant whenever it is changed.</p>
+
+<!-- # Public API
+
+This section outlines how to use the Swym Public API.
+
+## Retrieving the swym.js and initializing it - Shopify
+
+When you are using the Swym Shopify app, the reference to swym.js is already initialized for you. Wrap all calls referencing <code>window._swat</code> as below in a javascript file or within <code>script</code> tags.
+
+```javascript
+if(window._swat) {
+  // call your function
+} else {
+  window.SwymCallbacks = window.SwymCallbacks || [];
+  window.SwymCallbacks.push(function() {
+    //call your function
+  });
+}
+```
+ -->
+<h1 id='wishlist-count'>Wishlist count</h1><h2 id='get-user-39-s-wishlist-count'>Get user&#39;s wishlist count</h2>
+<p>Get the current count of wishlist.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">wishlistCount</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Wishlist items - '</span><span class="p">,</span> <span class="nx">r</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>A callback function which receives a single argument, which is the number of wishlist items for the user</td>
+</tr>
+</tbody></table>
+<h2 id='render-user-39-s-wishlist-count'>Render user&#39;s wishlist count</h2>
+<p>In order to render the number of wishlisted items (generally on swym&#39;s anchor/launcher) use this API. We can also attach it to custom element. Manual style modification might be needed in that case.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">renderWishlistCount</span><span class="p">(</span><span class="nx">anchorElem</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.swym-anchor-badge'</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cnt</span><span class="p">,</span> <span class="nx">elem</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"renderWishlistCount was called"</span><span class="p">,</span> <span class="nx">cnt</span><span class="p">,</span> <span class="nx">elem</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">1500</span><span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>elem</td>
+<td>DOM element</td>
+<td>A DOM element to update the badge on</td>
+</tr>
+<tr>
+<td>callback<span>optional</span></td>
+<td>function</td>
+<td>A callback function with an object that gives event after default actions</td>
+</tr>
+<tr>
+<td>timeout<span>optional</span></td>
+<td>integer</td>
+<td>Miliseconds after which you want to update the render count on screen</td>
+</tr>
+</tbody></table>
+<h1 id='custom-wishlist-page'>Custom wishlist page</h1><h2 id='get-all-tracked-products'>Get all tracked products</h2>
+<p>Same as <a href="#get-all-tracked-products">fetch</a>.</p>
+<h2 id='get-products-by-event-type'>Get products by event type</h2>
+<p>Fetch the items based on a filter from the swym service.  The set of events fetched from the swym service is sorted by date (reverse chronological).  You can call this method once the window._swat object is initialized. This is used to fetch wishlist items, please see the example.</p>
+
+<blockquote>
+<p>Example request</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetchWrtEventType</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="c1">// Get wishlist items</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'demo'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">r</span><span class="p">;</span> 
+  <span class="p">},</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">EventTypes</span><span class="p">.</span><span class="nx">addToWishList</span>
+<span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"di"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid.ts"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-16"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">Blue</span><span class="se">\"</span><span class="s2">:123}]"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product - Blue"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"et"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"raw-du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"act"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"empi"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourstorepid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"epi"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//yourstore.com/images/your-awesome-product-123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personal computer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pr"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accessories"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mac"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-variant"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"di"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceid.ts"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-16"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"variants"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">Red</span><span class="se">\"</span><span class="s2">:134}]"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Awesome Product - Red"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"et"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"raw-du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=134"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"act"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"empi"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"du"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://yourstore/products/your-awesome-product?v=134"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourstorepid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"epi"</span><span class="p">:</span><span class="w"> </span><span class="mi">134</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"//yourstore.com/images/your-awesome-product-134"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personal computer"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pr"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accessories"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mac"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product-variant"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>A callback function with a single argument, which is a  JSON response on success.</td>
+</tr>
+<tr>
+<td>event type</td>
+<td>int</td>
+<td>enum Reference</td>
+</tr>
+</tbody></table>
+<h2 id='email-wishlist'>Email Wishlist</h2>
+<p>Sends an email with the wishlist contents of the current user to a given email id. </p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">sendEmailWishList</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Email sent!'</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="s2">"abc@xyz.com"</span><span class="p">,</span>
+  <span class="s2">"Admin"</span><span class="p">,</span>
+  <span class="s2">"Hey, check out these products!"</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>A callback function which takes a single argument (JSON response from the swym service)</td>
+</tr>
+<tr>
+<td>emailId</td>
+<td>string</td>
+<td>An email Id to send the favorites to</td>
+</tr>
+<tr>
+<td>fromEmailId</td>
+<td>string</td>
+<td>The sender&#39;s email id / name</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>Some personal note that needs to be sent along with the email contents</td>
+</tr>
+<tr>
+<td>hashtag<span>optional</span></td>
+<td>string</td>
+<td>If collections of wishlist is used, a particular collection name that needs to be shared</td>
+</tr>
+</tbody></table>
+<h2 id='add-product-to-cart'>Add product to cart</h2>
+<p>From your wishlist popup or page, when you want to add a product to the cart of the store, create your add to cart button (if you are using custom button) and call this API.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">replayAddToCart</span><span class="p">(</span>
+  <span class="nx">productJson</span><span class="p">,</span>
+  <span class="nx">currentVariantId</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Successfully added product to cart."</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"There was some error."</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product</td>
+<td>object</td>
+<td>An object of the product which needs to be added to cart</td>
+</tr>
+<tr>
+<td>epi</td>
+<td>integer</td>
+<td>epi of the product which will be added to cart</td>
+</tr>
+<tr>
+<td>successFn</td>
+<td>function</td>
+<td>A function which will be called when product is successfully added to card</td>
+</tr>
+<tr>
+<td>errorFn</td>
+<td>function</td>
+<td>A function which will be called if case of any errors</td>
+</tr>
+</tbody></table>
+<h2 id='get-complete-product-details'>Get complete product details</h2>
+<p>Let&#39;s say we want entire details about a product, which includes variants, stock level etc (all such info about product), then we can use this API which will return a productJson object on successful call.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">getProductDetails</span><span class="p">(</span>
+  <span class="nx">params</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">productJson</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Entire product json:"</span><span class="p">,</span> <span class="nx">productJson</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">productJson</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Some error occured"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>params</td>
+<td>object</td>
+<td>An object with few product details like epi, empi, du</td>
+</tr>
+<tr>
+<td>successFn</td>
+<td>function</td>
+<td>A function which will be called with productJson which will be received as a response</td>
+</tr>
+<tr>
+<td>errorFn</td>
+<td>function</td>
+<td>A function which will be called if case of any errors</td>
+</tr>
+</tbody></table>
+<h2 id='connect-device-to-email-address'>Connect device to email address</h2>
+<p>Request  the swym service to send a one time email validation link. A mail will be sent on the email address which is given as argument to this API. Upon clicking &quot;Confirm&quot;, user will be redirected to site and authenticated.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">remoteAuthRequest</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">resp</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resp</span><span class="p">);</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">},</span>
+  <span class="s2">"my.email@domain.com"</span>
+<span class="p">);</span> 
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>A callback function with a single argument, which is a  JSON response called by remoteAuthRequest</td>
+</tr>
+<tr>
+<td>errorFn</td>
+<td>function</td>
+<td>A function which will be called in case of any errors</td>
+</tr>
+<tr>
+<td>email address</td>
+<td>string</td>
+<td>A valid email address</td>
+</tr>
+</tbody></table>
+<h2 id='check-if-device-has-an-associated-email'>Check if device has an associated email</h2>
+<blockquote>
+<p>Example request</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">authCheck</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'demo'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">r</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<blockquote>
+<p>Example response if auth</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r@foo.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"authn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example response if not auth</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"authn"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Query the swym service to see if the current browser is authenticated.</p>
+
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>A callback function with a single argument, which is a  JSON response called by authCheck.</td>
+</tr>
+</tbody></table>
+<h2 id='update-a-wishlist-event'>Update a wishlist event</h2>
+<p>Allows updating &quot;cprops&quot; parameter for an array of events. More info on &quot;cprops&quot; is here.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">updateWishlistEvent</span><span class="p">(</span>
+  <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">epi</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+      <span class="na">cprops</span><span class="p">:</span> <span class="p">{</span> <span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>eventsToUpdate</td>
+<td>array</td>
+<td>An array of objects containing the keys &quot;epi&quot; and &quot;cprops&quot; corresponding to the events that need to be updated</td>
+</tr>
+<tr>
+<td>successCallback</td>
+<td>function</td>
+<td>Function that gets called if the events are updated successfully</td>
+</tr>
+<tr>
+<td>errorCallback</td>
+<td>function</td>
+<td>Function that gets called if the update ran into an error</td>
+</tr>
+</tbody></table>
+<h1 id='in-stock-alerts'>In-stock alerts</h1><h2 id='show-quot-email-me-when-available-quot-widget'>Show &quot;Email me when available&quot; widget</h2>
+<p>When a product is out of stock and you want to show &quot;Email me when available&quot; subscription button, we can use this API to add a product to user&#39;s &quot;watchlist&quot;. Whenever product is back in stock, an email will be sent to user automatically if <code>addToWatchlist</code> was performed for that product for user.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWatchList</span><span class="p">(</span>
+  <span class="nx">clickEventObj</span><span class="p">,</span>
+  <span class="p">{</span> <span class="na">epi</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">empi</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">iu</span><span class="p">:</span> <span class="s2">"IMAGE_URL"</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"response"</span><span class="p">,</span> <span class="nx">r</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".INJECT-FORM"</span><span class="p">);</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clickEvent</td>
+<td>object</td>
+<td>event object of click listener event</td>
+</tr>
+<tr>
+<td>evtMap</td>
+<td>object</td>
+<td>An object consisting epi, empi and iu</td>
+</tr>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>A callback function which will be called on success</td>
+</tr>
+<tr>
+<td>renderIntoNode<span>optional</span></td>
+<td>DOM node</td>
+<td>A DOM node where you want to show addToWatchlist as popup/inline form</td>
+</tr>
+</tbody></table>
+<h2 id='request-in-stock-alert-for-a-product'>Request in-stock alert for a product</h2>
+<p>Sends an back-in-stock alert request to the Swym platform.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">sendWatchlist</span><span class="p">(</span>
+  <span class="s2">"demo@demo.com"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="p">,</span>
+  <span class="p">{</span>
+    <span class="na">epi</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="na">empi</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="na">iu</span><span class="p">:</span> <span class="s2">"https://a.com/b.jpeg"</span><span class="p">,</span>
+    <span class="na">pr</span><span class="p">:</span> <span class="mi">23</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mediumValue</td>
+<td>string</td>
+<td>Value of the medium (currently supported ‘email’, hence email Id)</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>string</td>
+<td>What id is collected</td>
+</tr>
+<tr>
+<td>product</td>
+<td>object</td>
+<td>Object with keys - {&quot;epi&quot; (variant id), &quot;empi&quot; (product master id), &quot;iu&quot; (image url), &quot;pr&quot; (price)}</td>
+</tr>
+<tr>
+<td>callbackFn</td>
+<td>function</td>
+<td>Function that gets called after a successful HTTP API call</td>
+</tr>
+<tr>
+<td>errorFn</td>
+<td>function</td>
+<td>Function that gets called when an error occurs</td>
+</tr>
+<tr>
+<td>addToMailingList<span>optional</span></td>
+<td>boolean</td>
+<td>Boolean to tell if user opted in or out from the mailing list (Note:- requires mailing list feature to be set up from Swym&#39;s end)</td>
+</tr>
+</tbody></table>
+<h1 id='collections-of-wishlist-premium'>Collections of Wishlist (Premium)</h1>
+<p>The Swym platform supports having multiple wishlists for a user, eg: my lounge, my bedroom, etc. or in case of fashion eg: my outdoor collection, my summer list, etc. These APIs are available on the premium plans, please contact us to enable these APIs for your installation.</p>
+<h2 id='get-products-for-a-collection'>Get products for a collection</h2><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetchWishlistWRTHashtag</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">products</span><span class="p">){</span>
+  <span class="c1">// Render products</span>
+<span class="p">},</span> <span class="s2">"Summer Collection"</span><span class="p">);</span>
+</code></pre>
+<p>When we want to get the information about various wishlist related activities based on hashtags, we can use this API. We will get an array of products in response.</p>
+
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>renderFn</td>
+<td>function</td>
+<td>A function to render the response product JSONs</td>
+</tr>
+<tr>
+<td>hashtag</td>
+<td>string</td>
+<td>Name of the hashtag</td>
+</tr>
+</tbody></table>
+<h2 id='add-collections-to-a-product'>Add collections to a product</h2>
+<p>Add an array of collections to a product. When adding a product to wishlist, this API has to be called before calling <a href="#addtowishlist">addToWishlist</a> API.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addCollectionsToProduct</span><span class="p">(</span>
+  <span class="nx">epi</span><span class="p">,</span> <span class="c1">// epi is the currently selected variant id</span>
+  <span class="p">[</span><span class="s2">"My Lounge"</span><span class="p">],</span>
+  <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Added to collection"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span> 
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>epi</td>
+<td>int/string</td>
+<td>External product unique id (variant level if applicable)</td>
+</tr>
+<tr>
+<td>Collections to add</td>
+<td>array</td>
+<td>Array of hashtags eg: [&quot;My Lounge&quot;]</td>
+</tr>
+<tr>
+<td>Success callback<span>optional</span></td>
+<td>function</td>
+<td>Success callback function which will be called upon successful response.</td>
+</tr>
+<tr>
+<td>Error callback<span>optional</span></td>
+<td>function</td>
+<td>Error callback function which will be called if unsuccessful response.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This should be followed by a call to addToWishlist. To retrieve the collection for a wishlisted product, every object has a property “hashtags” containing the array of collections set for the product.
+</aside>
+<h2 id='add-products-to-a-collections'>Add products to a collections</h2>
+<p>Add a list of products to a collection.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addProductsToCollection</span><span class="p">(</span>
+  <span class="s2">"My Lounge"</span><span class="p">,</span>
+  <span class="p">[</span> <span class="nx">epi</span> <span class="p">],</span> <span class="c1">// epi is the currently selected variant id</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Added to collection"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>collection</td>
+<td>string</td>
+<td>e.g. “My Lounge”</td>
+</tr>
+<tr>
+<td>productsToAdd</td>
+<td>array</td>
+<td>List of variant ids to add to the collection</td>
+</tr>
+<tr>
+<td>Success callback<span>optional</span></td>
+<td>function</td>
+<td>Success callback function which will be called upon successful response.</td>
+</tr>
+<tr>
+<td>Error callback<span>optional</span></td>
+<td>function</td>
+<td>Error callback function which will be called if unsuccessful response.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This should be followed by a call to addToWishlist. To retrieve the collection for a wishlisted product, every object has a property “hashtags” containing the array of collections set for the product.
+</aside>
+<h2 id='get-all-collections'>Get all collections</h2>
+<p>Gets all collections for the current user.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">getAllCollections</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">collections</span><span class="p">){</span>
+  <span class="c1">// code to use the returned collections</span>
+<span class="p">})</span>
+<span class="kd">var</span> <span class="nx">collections</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">getAllCollections</span><span class="p">(</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">collections</span><span class="p">){},</span>
+  <span class="kc">true</span>
+<span class="p">);</span> <span class="c1">// with the bImmediate argument</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>callback</td>
+<td>function</td>
+<td>A callback function that will receive all the collections</td>
+</tr>
+<tr>
+<td>bImmediate</td>
+<td>boolean</td>
+<td>Boolean for whether to get all collections from in-memory cache or make an API call. If true, the API will return results. If false, the results will be returned to the callback function.</td>
+</tr>
+</tbody></table>
+<h2 id='remove-collections-from-a-product'>Remove collections from a product</h2>
+<p>Remove a set of collections from a wishlisted product. Let’s say a product is added in some custom collections (product has hashtags) and we want to remove a product from some particular collections. Call this API and it will remove particular hashtags from a swym product’s data. Now, product will not be shown in those collections anymore.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeCollectionsFromProduct</span><span class="p">(</span>
+  <span class="mi">141445464108</span><span class="p">,</span>
+  <span class="p">[</span> <span class="s2">"summer collection"</span><span class="p">,</span> <span class="s2">"ann's birthday"</span> <span class="p">],</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>epi</td>
+<td>int/string</td>
+<td>External product unique id (variant level if applicable)</td>
+</tr>
+<tr>
+<td>collectionsToRemove</td>
+<td>array</td>
+<td>An array of collections to remove</td>
+</tr>
+<tr>
+<td>Success callback<span>optional</span></td>
+<td>function</td>
+<td>Success callback function which will be called upon successful response.</td>
+</tr>
+<tr>
+<td>Error callback<span>optional</span></td>
+<td>function</td>
+<td>Error callback function which will be called if unsuccessful response.</td>
+</tr>
+</tbody></table>
+<h2 id='remove-products-from-a-collection'>Remove products from a collection</h2>
+<p>Remove an array of products from a collection.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeProductsFromCollection</span><span class="p">(</span>
+  <span class="s2">"summer collection"</span><span class="p">,</span>
+  <span class="p">[</span> <span class="mi">141445464108</span> <span class="p">],</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>collection</td>
+<td>string</td>
+<td>Collection name</td>
+</tr>
+<tr>
+<td>productsToRemove</td>
+<td>array</td>
+<td>An array of products to remove</td>
+</tr>
+<tr>
+<td>Success callback<span>optional</span></td>
+<td>function</td>
+<td>Success callback function which will be called upon successful response.</td>
+</tr>
+<tr>
+<td>Error callback<span>optional</span></td>
+<td>function</td>
+<td>Error callback function which will be called if unsuccessful response.</td>
+</tr>
+</tbody></table>
+<h2 id='remove-a-collection'>Remove a collection</h2>
+<p>Removes a wishlist collection.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeWishlistCollection</span><span class="p">(</span>
+  <span class="s2">"Patio furniture"</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>collectionsToRemove</td>
+<td>array</td>
+<td>An array of collections to remove</td>
+</tr>
+<tr>
+<td>Success callback<span>optional</span></td>
+<td>function</td>
+<td>Success callback function which will be called upon successful response.</td>
+</tr>
+<tr>
+<td>Error callback<span>optional</span></td>
+<td>function</td>
+<td>Error callback function which will be called if unsuccessful response.</td>
+</tr>
+</tbody></table>
+<h1 id='social-sharing-of-wishlist-premium'>Social sharing of Wishlist (Premium)</h1><h2 id='share-wishlist-on-social-media'>Share wishlist on social media</h2>
+<p>This API creates the unique URL for a particular sharing platform and opens a new dialog in that platform to perform the sharing step. For eg., for facebook, the share page will be opened in a new window.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">shareWishlistSocial</span><span class="p">(</span>
+  <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"https://www.facebook.com/sharer.php?u={{shareurl}}&amp;t={{note}}"</span><span class="p">,</span>
+  <span class="s2">"facebook"</span><span class="p">,</span>
+  <span class="s2">"Hello World"</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">);</span> <span class="c1">// will open facebook share dialog</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hashtag</td>
+<td>string</td>
+<td>If collections of Wishlist is not enabled, hashtag has to be set as null.</td>
+</tr>
+<tr>
+<td>platformShareUrlTemplate</td>
+<td>string</td>
+<td>The social platform-specific share URL with Mustache tags. More info here and here. Out of the box, platforms supported are &quot;facebook&quot;, &quot;twitter&quot;, &quot;googleplus&quot;. To get share urls for these, use the variable - _swat.retailerSettings.Wishlist.SharingModes. This has the default icon url, share url and key for each of these platforms. Again, new platforms can be added here and/or default icons can be changed for you if you need it.</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>string</td>
+<td>The key to one of the sharing platforms. By default, one of &quot;facebook&quot;, &quot;twitter&quot;, &quot;googleplus&quot;</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>Some platforms allow to send a custom note along with shared url. This field is to capture that message. Amongst the defaults, at the moment, notes only work with twitter.</td>
+</tr>
+<tr>
+<td>errCallBack</td>
+<td>function</td>
+<td>Function that gets called if there is an error. Called with error message as argument.</td>
+</tr>
+</tbody></table>
+<h2 id='generate-shareable-wishlist-url'>Generate shareable wishlist URL</h2>
+<p>A lower level API that returns the unique wishlist URL that can be shared anywhere. This URL will return the user who clicks on it back to the site into the default share wishlist page. This page can be overridden from the retailer settings if need be.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">generateSharedWishlistURL</span><span class="p">(</span>
+  <span class="kc">null</span><span class="p">,</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="p">},</span>     <span class="c1">// returns the generated url</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">;)</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>hashtag</td>
+<td>string</td>
+<td>If collections of Wishlist is not enabled, hashtag has to be set as null.</td>
+</tr>
+<tr>
+<td>successFn</td>
+<td>function</td>
+<td>Function that gets called if the URL is generated successfully. The generated url is sent as argument to this function</td>
+</tr>
+<tr>
+<td>errorFn</td>
+<td>function</td>
+<td>Function that gets called if the URL generation fails. Error message is passed as argument.</td>
+</tr>
+</tbody></table>
+<h1 id='enum-reference'>Enum reference</h1><h2 id='eventtype-et'>EventType (et)</h2>
+<p>&quot;et&quot;</p>
+
+<p>0 - Unknown, </p>
+
+<p>1 - product, </p>
+
+<p>2 - category, </p>
+
+<p>3 - cart</p>
+
+<p>4 - wishlist</p>
+
+<p>5 - coupon</p>
+
+<p>6 - product purchase</p>
+
+<p>7 - removed from cart</p>
+
+<!-- # Provider based validation - Shopify
+
+As part of the Swym Shopify app install, provider based logins are picked automatically and validated the user to Swym. -->
+<h1 id='glossary'>Glossary</h1><h2 id='devicecategory-dcat'>DeviceCategory (dcat)</h2>
+<p>“DeviceCategory” is an enum that will typically return one of these three types:</p>
+
+<ul>
+<li><p>&quot;Personal computer&quot;</p></li>
+<li><p>“Tablet”</p></li>
+<li><p>“Smartphone”</p></li>
+</ul>
+<h2 id='json-key-reference-for-sending-pageview-wishlist-cart-events'>JSON key reference for sending pageview/wishlist/cart events</h2>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>et</td>
+<td>int/enum</td>
+<td>event-type (see above)</td>
+</tr>
+<tr>
+<td>pr</td>
+<td>float</td>
+<td>price</td>
+</tr>
+<tr>
+<td>dt</td>
+<td>string</td>
+<td>doc-title</td>
+</tr>
+<tr>
+<td>du</td>
+<td>string</td>
+<td>doc-uri - Full url with protocol</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>string</td>
+<td>image-uri - Without protocol so protocol can be decided while rendering to http or https</td>
+</tr>
+<tr>
+<td>ru</td>
+<td>string</td>
+<td>referrer-uri</td>
+</tr>
+<tr>
+<td>ct</td>
+<td>string</td>
+<td>category-type (Example; Womens Shoes)</td>
+</tr>
+<tr>
+<td>bt</td>
+<td>string</td>
+<td>brand-type (Example: Nike)</td>
+</tr>
+<tr>
+<td>epi</td>
+<td>int/string</td>
+<td>external product unique id (variant level if available)</td>
+</tr>
+<tr>
+<td>empi</td>
+<td>int/string</td>
+<td>external product master id (if there is a group product id with different variant ids)</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>int</td>
+<td>quantity</td>
+</tr>
+<tr>
+<td>stk</td>
+<td>int</td>
+<td>stock value</td>
+</tr>
+<tr>
+<td>variants</td>
+<td>JSON</td>
+<td>variants (Example - <code>[{&quot;Black/blue&quot;: &lt;<epi-value>&gt;}])</code></td>
+</tr>
+<tr>
+<td>cprops</td>
+<td>object</td>
+<td>custom parameter to add any custom data to the event. Fetch will return this data.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Shopify’s product handle only returns handle, if you are using liquid, try using
+<code>{{ shop.url }}{{ product.url }}</code> expression to get the full url of the product
+</aside>
+<h1 id='custom-implementation'>Custom implementation</h1><h2 id='track-pageview'>Track pageview</h2>
+<p>Sends a page view event , by default. Specific information regarding the page is automatically collected and sent (if unspecified and detected from the page).  You can call this method once the <code>window._swat</code> object is initialized. </p>
+
+<p>This API can be called in below scenarios,</p>
+
+<ul>
+<li><p>A product page is loaded</p></li>
+<li><p>A product is loaded in a quick view popup</p></li>
+<li><p>A product variant is changed, if you want more granularity in tracking, at a variant level in addition to the above two scenarios</p></li>
+</ul>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">trackPageview</span><span class="p">({</span>
+  <span class="s2">"epi"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+  <span class="s2">"du"</span><span class="p">:</span> <span class="s2">"https://www.understandfrance.org/AsterixObelix"</span><span class="p">,</span>
+  <span class="s2">"empi"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+  <span class="s2">"iu"</span> <span class="p">:</span> <span class="s2">"//www.understandfrance.org/Images/AsterixObelix.jpg"</span><span class="p">,</span> 
+  <span class="s2">"pr"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="s2">"stk"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="s2">"variants"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"Blue / XL"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}]</span>
+<span class="p">});</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>epi</td>
+<td>int/string</td>
+<td>External product unique id (variant level if applicable)</td>
+</tr>
+<tr>
+<td>empi</td>
+<td>int/string</td>
+<td>External product master id (if there is a group product id with different variant ids)</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>string</td>
+<td>Image-uri - Without protocol so protocol can be decided while rendering to http or https</td>
+</tr>
+<tr>
+<td>pr</td>
+<td>float</td>
+<td>Price</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
