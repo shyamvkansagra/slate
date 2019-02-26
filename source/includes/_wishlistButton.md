@@ -2,19 +2,6 @@
 
 ## Add to wishlist
 
-Adds a new wishlist event. Please refer to the example. You can call this method once the window._swat object is initialized. This API operates at the epi, i.e. product variant level as set by the store.
-
-This API can be called in the below scenarios,
-
-- 'onclick' button on a product page
-- 'onclick' button on a product quick view
-- 'onclick' buttons on a collections page with multiple products
-- 'onclick' buttons on a widget of multiple products, Eg: related products, top wishlist products, etc.
-
-Tip - Before showing a button for 'Add to Wishlist', it is best to first check if the product or variant is already in the wishlist, by using the "fetch" API. 
-
-Please refer our blog/guide for directly connecting button to wishlist actions here - [Wishlist Plus Customization Cheatsheet](http://swym.it/wishlist-plus-customizations-cheatsheet/)
-
 ```javascript
 window._swat.addToWishList(
   {
@@ -30,7 +17,39 @@ window._swat.addToWishList(
     console.log('Added to wishlist');
   }
 );
+
+// example with cprops and hashtags
+window._swat.addToWishList(
+  {
+    "epi": 456,
+    "du": "https://yourstore.com/products/your-another-awesome-product",
+    "empi": 6789,
+    "iu" : "//www.understandfrance.org/Images/AsterixObelix2.jpg",
+    "pr": 70,
+    "stk": 10,
+    "variants": [{"Yellow / XL": 123}],
+    "cprops": {personalised: true},
+    "hashtags": ["summer dresses", "party wear"]
+  },
+  function(r) {
+    console.log('Added to wishlist');
+  }
+);
 ```
+
+Adds a new wishlist event. Please refer to the example. You can call this method once the window._swat object is initialized. This API operates at the epi, i.e. product variant level as set by the store.
+
+This API can be called in the below scenarios,
+
+- 'onclick' button on a product page
+- 'onclick' button on a product quick view
+- 'onclick' buttons on a collections page with multiple products
+- 'onclick' buttons on a widget of multiple products, Eg: related products, top wishlist products, etc.
+
+Tip - Before showing a button for 'Add to Wishlist', it is best to first check if the product or variant is already in the wishlist, by using the "fetch" API.
+
+Please refer our blog/guide for directly connecting button to wishlist actions here - [Wishlist Plus Customization Cheatsheet](http://swym.it/wishlist-plus-customizations-cheatsheet/)
+
 
 Argument | Type | Description
 --------- | ------- | -----------
@@ -38,6 +57,8 @@ epi | int/string | External product unique id (variant level if applicable)
 empi | int/string | External product master id (if there is a group product id with different variant ids)
 iu | string | Image-uri - Without protocol so protocol can be decided while rendering to http or https
 pr | float | Price
+cprops<span>optional</span> | object | data object that can be used to pass any custom data about the event
+hashtags<span>optional</span> | array | array of wishlist collections to which this product needs to be added
 For response | function | A callback function, which takes a single argument (JSON response from the swym service)
 
 In the example, the request adds the product variant to the wishlist.
@@ -80,9 +101,9 @@ In the example, removeFromWishList removes a previously added entry from the wis
 > Example request
 
 ```javascript
-window._swat.fetch( function(r) { 
+window._swat.fetch( function(r) {
   console.log(r);
-  document.getElementById('demo').innerHTML = r; 
+  document.getElementById('demo').innerHTML = r;
 });
 ```
 
@@ -163,11 +184,11 @@ selector<span>optional</span> | string | A selector for custom wishlist button, 
 
 In Shopify, each product has multiple variants. In many stores, it is very important to capture events at a variant level, such as the variant id, variant price, variant stock, variant options, variant image, etc. The end user interacts with the product from the product details page, a collections page, a quick view popup or a widget of products. Swym provides support for managing events at product and variant levels for each of those scenarios. Find the detailed explanation below:
 
-For a product details page - Let’s take the “onload” and “afterload”  scenarios and break it down to use cases - 
+For a product details page - Let’s take the “onload” and “afterload”  scenarios and break it down to use cases -
 
 “onload” - When a product page is opened, following are the usual patterns,
 
-- First variant is picked 
+- First variant is picked
 - First variant that is in stock and available to purchase is picked
 - The variant specified in the query parameter <code>variant=<<variantid>></code> to the url is picked
 
