@@ -454,22 +454,7 @@
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='wishlist-button'>Wishlist button</h1><h2 id='add-to-wishlist'>Add to wishlist</h2>
-<p>Adds a new wishlist event. Please refer to the example. You can call this method once the window._swat object is initialized. This API operates at the epi, i.e. product variant level as set by the store.</p>
-
-<p>This API can be called in the below scenarios,</p>
-
-<ul>
-<li>&#39;onclick&#39; button on a product page</li>
-<li>&#39;onclick&#39; button on a product quick view</li>
-<li>&#39;onclick&#39; buttons on a collections page with multiple products</li>
-<li>&#39;onclick&#39; buttons on a widget of multiple products, Eg: related products, top wishlist products, etc.</li>
-</ul>
-
-<p>Tip - Before showing a button for &#39;Add to Wishlist&#39;, it is best to first check if the product or variant is already in the wishlist, by using the &quot;fetch&quot; API. </p>
-
-<p>Please refer our blog/guide for directly connecting button to wishlist actions here - <a href="http://swym.it/wishlist-plus-customizations-cheatsheet/">Wishlist Plus Customization Cheatsheet</a></p>
-<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishList</span><span class="p">(</span>
+<h1 id='wishlist-button'>Wishlist button</h1><h2 id='add-to-wishlist'>Add to wishlist</h2><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishList</span><span class="p">(</span>
   <span class="p">{</span>
     <span class="s2">"epi"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
     <span class="s2">"du"</span><span class="p">:</span> <span class="s2">"https://yourstore.com/products/your-awesome-product"</span><span class="p">,</span>
@@ -483,7 +468,40 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Added to wishlist'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">);</span>
+
+<span class="c1">// example with cprops and hashtags</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishList</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="s2">"epi"</span><span class="p">:</span> <span class="mi">456</span><span class="p">,</span>
+    <span class="s2">"du"</span><span class="p">:</span> <span class="s2">"https://yourstore.com/products/your-another-awesome-product"</span><span class="p">,</span>
+    <span class="s2">"empi"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+    <span class="s2">"iu"</span> <span class="p">:</span> <span class="s2">"//www.understandfrance.org/Images/AsterixObelix2.jpg"</span><span class="p">,</span>
+    <span class="s2">"pr"</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>
+    <span class="s2">"stk"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">"variants"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"Yellow / XL"</span><span class="p">:</span> <span class="mi">123</span><span class="p">}],</span>
+    <span class="s2">"cprops"</span><span class="p">:</span> <span class="p">{</span><span class="na">personalised</span><span class="p">:</span> <span class="kc">true</span><span class="p">},</span>
+    <span class="s2">"hashtags"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"summer dresses"</span><span class="p">,</span> <span class="s2">"party wear"</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Added to wishlist'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
 </code></pre>
+<p>Adds a new wishlist event. Please refer to the example. You can call this method once the window._swat object is initialized. This API operates at the epi, i.e. product variant level as set by the store.</p>
+
+<p>This API can be called in the below scenarios,</p>
+
+<ul>
+<li>&#39;onclick&#39; button on a product page</li>
+<li>&#39;onclick&#39; button on a product quick view</li>
+<li>&#39;onclick&#39; buttons on a collections page with multiple products</li>
+<li>&#39;onclick&#39; buttons on a widget of multiple products, Eg: related products, top wishlist products, etc.</li>
+</ul>
+
+<p>Tip - Before showing a button for &#39;Add to Wishlist&#39;, it is best to first check if the product or variant is already in the wishlist, by using the &quot;fetch&quot; API.</p>
+
+<p>Please refer our blog/guide for directly connecting button to wishlist actions here - <a href="http://swym.it/wishlist-plus-customizations-cheatsheet/">Wishlist Plus Customization Cheatsheet</a></p>
+
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -510,6 +528,16 @@
 <td>pr</td>
 <td>float</td>
 <td>Price</td>
+</tr>
+<tr>
+<td>cprops<span>optional</span></td>
+<td>object</td>
+<td>data object that can be used to pass any custom data about the event</td>
+</tr>
+<tr>
+<td>hashtags<span>optional</span></td>
+<td>array</td>
+<td>array of wishlist collections to which this product needs to be added</td>
 </tr>
 <tr>
 <td>For response</td>
@@ -576,9 +604,9 @@ Please note that the these parameters are mandatory ones (epi, empi, du and iu).
 <blockquote>
 <p>Example request</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span> 
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'demo'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">r</span><span class="p">;</span> 
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'demo'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">r</span><span class="p">;</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
@@ -673,12 +701,12 @@ Please note that the these parameters are mandatory ones (epi, empi, du and iu).
 <h2 id='trigger-variant-change'>Trigger variant change</h2>
 <p>In Shopify, each product has multiple variants. In many stores, it is very important to capture events at a variant level, such as the variant id, variant price, variant stock, variant options, variant image, etc. The end user interacts with the product from the product details page, a collections page, a quick view popup or a widget of products. Swym provides support for managing events at product and variant levels for each of those scenarios. Find the detailed explanation below:</p>
 
-<p>For a product details page - Let’s take the “onload” and “afterload”  scenarios and break it down to use cases - </p>
+<p>For a product details page - Let’s take the “onload” and “afterload”  scenarios and break it down to use cases -</p>
 
 <p>“onload” - When a product page is opened, following are the usual patterns,</p>
 
 <ul>
-<li>First variant is picked </li>
+<li>First variant is picked</li>
 <li>First variant that is in stock and available to purchase is picked</li>
 <li>The variant specified in the query parameter <code>variant=&lt;<variantid>&gt;</code> to the url is picked</li>
 </ul>
