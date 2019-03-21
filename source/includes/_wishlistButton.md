@@ -2,6 +2,8 @@
 
 ## Add to wishlist
 
+### _swat.addToWishList(eventObject, callbackFn, noShowNotification<sub class="subscript">opt</sub>)
+
 ```javascript
 window._swat.addToWishList(
   {
@@ -60,12 +62,15 @@ pr | float | Price
 cprops<span>optional</span> | object | data object that can be used to pass any custom data about the event
 hashtags<span>optional</span> | array | array of wishlist collections to which this product needs to be added
 For response | function | A callback function, which takes a single argument (JSON response from the swym service)
+noShowNotification | boolean | Boolean for should the slide-out notification be shown. By default, this argument is false and the notification is shown
 
 In the example, the request adds the product variant to the wishlist.
 Please note that the these parameters are mandatory ones (epi, empi, du and iu).
 
 
 ## Remove from wishlist
+
+### _swat.removeFromWishList(eventObject, callbackFn)
 
 Removes a previously added wishlist event. Please refer to the example. You can call this method once the <code>window._swat</code> object is initialized. This API can be used for the same scenarios as <code>addToWishList</code>.
 
@@ -97,6 +102,8 @@ For response | function | A callback function, which takes a single argument (JS
 In the example, removeFromWishList removes a previously added entry from the wish list.
 
 ## Get all tracked products
+
+### _swat.fetch(callbackFn)
 
 > Example request
 
@@ -204,20 +211,19 @@ For most themes, scenarios 1 and 3 are common, but there are no defined rules. A
 
 <!-- # Public API
 
-This section outlines how to use the Swym Public API.
+This section outlines how to use the Swym JS API.
 
-## Retrieving the swym.js and initializing it - Shopify
+## Retrieving the swym.js and initializing it
 
 When you are using the Swym Shopify app, the reference to swym.js is already initialized for you. Wrap all calls referencing <code>window._swat</code> as below in a javascript file or within <code>script</code> tags.
 
 ```javascript
-if(window._swat) {
-  // call your function
-} else {
-  window.SwymCallbacks = window.SwymCallbacks || [];
-  window.SwymCallbacks.push(function() {
-    //call your function
-  });
-}
+  function swymCallbackFn(){
+
+  }
+  if(!window.SwymCallbacks){
+   window.SwymCallbacks = [];
+  }
+  window.SwymCallbacks.push(swymCallbackFn);
 ```
  -->

@@ -2,6 +2,8 @@
 
 ## Show "Email me when available" widget
 
+### _swat.addToWatchList(clickEvent, eventMap, callbackFn, renderIntoNode<sub class="subscript">opt</sub>)
+
 When a product is out of stock and you want to show "Email me when available" subscription button, we can use this API to add a product to user's "watchlist". Whenever product is back in stock, an email will be sent to user automatically if `addToWatchlist` was performed for that product for user.
 
 ```javascript
@@ -25,6 +27,8 @@ renderIntoNode<span>optional</span> | DOM node | A DOM node where you want to sh
 
 ## Request in-stock alert for a product
 
+### _swat.sendWatchlist(mediumValue, sendMedium, eventObject, callbackFn, errorFn, addToMailingList<sub class="subscript">opt</sub>)
+
 Sends an back-in-stock alert request to the Swym platform.
 
 ```javascript
@@ -45,7 +49,7 @@ window._swat.sendWatchlist(
 Argument | Type | Description
 --------- | ------- | -----------
 mediumValue | string | Value of the medium (currently supported ‘email’, hence email Id)
-medium | string | What id is collected
+medium | string | What id is collected (currently 'email' supported)
 product | object | Object with keys - {"epi" (variant id), "empi" (product master id), "iu" (image url), "pr" (price)}
 callbackFn | function | Function that gets called after a successful HTTP API call
 errorFn | function | Function that gets called when an error occurs

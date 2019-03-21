@@ -2,6 +2,8 @@
 
 ## Get user's wishlist count
 
+### _swat.wishlistCount(callbackFn)
+
 Get the current count of wishlist.
 
 ```javascript
@@ -18,6 +20,8 @@ callbackFn | function | A callback function which receives a single argument, wh
 
 
 ## Render user's wishlist count
+
+### _swat.renderWishlistCount(anchorDomElem, callbackFn, timeout<sub class="subscript">opt</sub>)
 
 In order to render the number of wishlisted items (generally on swym's anchor/launcher) use this API. We can also attach it to custom element. Manual style modification might be needed in that case.
 

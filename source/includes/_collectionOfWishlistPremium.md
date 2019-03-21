@@ -4,6 +4,8 @@ The Swym platform supports having multiple wishlists for a user, eg: my lounge, 
 
 ## Get products for a collection
 
+### _swat.fetchWishlistWRTHashtag(callbackFn, hashtag)
+
 ```javascript
 window._swat.fetchWishlistWRTHashtag(function(products){
   // Render products
@@ -19,6 +21,8 @@ hashtag | string | Name of the hashtag
 
 ## Add collections to a product
 
+### _swat.addCollectionsToProduct(variantId, collectionsToAdd, callbackFn, errorFn)
+
 Add an array of collections to a product. When adding a product to wishlist, this API has to be called before calling [addToWishlist](#addtowishlist) API.
 
 ```javascript
@@ -28,7 +32,7 @@ window._swat.addCollectionsToProduct(
   function(){
     console.log("Added to collection");
   }
-); 
+);
 ```
 
 
@@ -45,6 +49,8 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 
 
 ## Add products to a collections
+
+### _swat.addProductsToCollection(collection, variantIdsToAdd, callbackFn, errorFn)
 
 Add a list of products to a collection.
 
@@ -71,6 +77,8 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 
 ## Get all collections
 
+### _swat.getAllCollections(callbackFn, bImmediate<sub class="subscript">opt</sub>)
+
 Gets all collections for the current user.
 
 ```javascript
@@ -86,10 +94,12 @@ var collections = window._swat.getAllCollections(
 Argument | Type | Description
 --------- | ------- | -----------
 callback | function | A callback function that will receive all the collections
-bImmediate | boolean | Boolean for whether to get all collections from in-memory cache or make an API call. If true, the API will return results. If false, the results will be returned to the callback function. 
+bImmediate | boolean | Boolean for whether to get all collections from in-memory cache or make an API call. If true, the API will return results. If false, the results will be returned to the callback function.
 
 
 ## Remove collections from a product
+
+### _swat.removeCollectionsFromProduct(variantId, collectionsToRemove, callbackFn, errorFn)
 
 Remove a set of collections from a wishlisted product. Let’s say a product is added in some custom collections (product has hashtags) and we want to remove a product from some particular collections. Call this API and it will remove particular hashtags from a swym product’s data. Now, product will not be shown in those collections anymore.
 
@@ -112,6 +122,8 @@ Error callback<span>optional</span> | function | Error callback function which w
 
 ## Remove products from a collection
 
+### _swat.removeProductsFromCollection(collection, variantIdsToRemove, callbackFn, errorFn)
+
 Remove an array of products from a collection.
 
 ```javascript
@@ -126,11 +138,13 @@ window._swat.removeProductsFromCollection(
 Argument | Type | Description
 --------- | ------- | -----------
 collection | string | Collection name
-productsToRemove | array | An array of products to remove
+productsToRemove | array | An array of variant ids to remove
 Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
 Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
 
 ## Remove a collection
+
+### _swat.removeWishlistCollection(collection, callbackFn, errorFn)
 
 Removes a wishlist collection.
 
@@ -144,6 +158,6 @@ window._swat.removeWishlistCollection(
 
 Argument | Type | Description
 --------- | ------- | -----------
-collectionsToRemove | array | An array of collections to remove
+collectionToRemove | String | Name of the collection to remove
 Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
 Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
