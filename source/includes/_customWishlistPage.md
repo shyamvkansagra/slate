@@ -131,7 +131,7 @@ window._swat.replayAddToCart(
 Argument | Type | Description
 --------- | ------- | -----------
 product | object | An object of the product which needs to be added to cart with keys "empi" (product master id) and "du" (product url)
-epi | integer | epi of the product which will be added to cart
+epi | integer | variant id of the product which will be added to cart
 successFn | function | A function which will be called when product is successfully added to card
 errorFn | function | A function which will be called if case of any errors
 
