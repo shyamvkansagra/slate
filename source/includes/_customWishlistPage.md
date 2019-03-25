@@ -5,7 +5,7 @@
 Same as [fetch](#get-all-tracked-products).
 
 
-## Get products by event type
+## Get products by event type <span class="hidden"> - fetchWrtEventTypeET</span>
 
 ### _swat.fetchWrtEventTypeET(callbackFn, eventType)
 
@@ -83,7 +83,7 @@ callbackFn | function | A callback function with a single argument, which is a  
 event type | int | enum Reference
 
 
-## Email Wishlist
+## Email Wishlist <span class="hidden"> - sendEmailWishList</span>
 
 ### _swat.sendEmailWishList(callbackFn, toEmailId, fromName, note, hashtag<sub class="subscript">opt</sub>)
 
@@ -109,7 +109,7 @@ note | string | Some personal note that needs to be sent along with the email co
 hashtag<span>optional</span> | string | If collections of wishlist is used, a particular collection name that needs to be shared
 
 
-## Add product to cart
+## Add product to cart <span class="hidden"> - replayAddToCart</span>
 
 ### _swat.replayAddToCart(productJson, variantId, callbackFn, errorFn)
 
@@ -136,7 +136,7 @@ successFn | function | A function which will be called when product is successfu
 errorFn | function | A function which will be called if case of any errors
 
 
-## Get complete product details
+## Get complete product details <span class="hidden"> - getProductDetails</span>
 
 ### _swat.getProductDetails(productObject, callbackFn, errorFn)
 
@@ -161,7 +161,7 @@ successFn | function | A function which will be called with productJson
 errorFn | function | A function which will be called if case of any errors
 
 
-## Connect device to email address
+## Connect device to email address <span class="hidden"> - remoteAuthRequest</span>
 
 ### _swat.remoteAuthRequest(callbackFn, errorFn, toEmailId)
 
@@ -182,7 +182,7 @@ errorFn | function | A function which will be called in case of any errors
 email address | string | A valid email address
 
 
-## Check if device has an associated email
+## Check if device has an associated email <span class="hidden"> - authCheck</span>
 
 ### _swat.authCheck(callbackFn)
 
@@ -220,7 +220,7 @@ Argument | Type | Description
 callbackFn | function | A callback function with a single argument, which is a  JSON response called by authCheck.
 
 
-## Update a wishlist event
+## Update a wishlist event <span class="hidden"> - updateWishlistEvent</span>
 
 ### _swat.updateWishlistEvent(eventsToUpdate, callbackFn, errorFn)
 

@@ -1,6 +1,6 @@
 # Social sharing of Wishlist (Premium)
 
-## Share wishlist on social media
+## Share wishlist on social media <span class="hidden"> - shareWishlistSocial</span>
 
 ### _swat.shareWishlistSocial(hashtag, shareUrlTemplate, platform, note, errCallBack)
 
@@ -24,7 +24,7 @@ platform | string | The key to one of the sharing platforms. By default, one of 
 note | string | Some platforms allow to send a custom note along with shared url. This field is to capture that message. Amongst the defaults, at the moment, notes only work with twitter.
 errCallBack | function | Function that gets called if there is an error. Called with error message as argument.
 
-## Generate shareable wishlist URL
+## Generate shareable wishlist URL <span class="hidden"> - generateSharedWishlistURL</span>
 
 ### _swat.generateSharedWishlistURL(hashtag, callbackFn, errCallBack)
 

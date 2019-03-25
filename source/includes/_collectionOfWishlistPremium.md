@@ -2,7 +2,7 @@
 
 The Swym platform supports having multiple wishlists for a user, eg: my lounge, my bedroom, etc. or in case of fashion eg: my outdoor collection, my summer list, etc. These APIs are available on the premium plans, please contact us to enable these APIs for your installation.
 
-## Get products for a collection
+## Get products for a collection <span class="hidden"> - fetchWishlistWRTHashtag</span>
 
 ### _swat.fetchWishlistWRTHashtag(callbackFn, hashtag)
 
@@ -19,7 +19,7 @@ Argument | Type | Description
 renderFn | function | A function to render the response product JSONs
 hashtag | string | Name of the hashtag
 
-## Add collections to a product
+## Add collections to a product <span class="hidden"> - addCollectionsToProduct</span>
 
 ### _swat.addCollectionsToProduct(variantId, collectionsToAdd, callbackFn, errorFn)
 
@@ -48,7 +48,7 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 </aside>
 
 
-## Add products to a collections
+## Add products to a collections <span class="hidden"> - addProductsToCollection</span>
 
 ### _swat.addProductsToCollection(collection, variantIdsToAdd, callbackFn, errorFn)
 
@@ -75,7 +75,7 @@ Error callback<span>optional</span> | function | Error callback function which w
 This should be followed by a call to addToWishlist. To retrieve the collection for a wishlisted product, every object has a property “hashtags” containing the array of collections set for the product.
 </aside>
 
-## Get all collections
+## Get all collections <span class="hidden"> - getAllCollections</span>
 
 ### _swat.getAllCollections(callbackFn, bImmediate<sub class="subscript">opt</sub>)
 
@@ -97,7 +97,7 @@ callback | function | A callback function that will receive all the collections
 bImmediate | boolean | Boolean for whether to get all collections from in-memory cache or make an API call. If true, the API will return results. If false, the results will be returned to the callback function.
 
 
-## Remove collections from a product
+## Remove collections from a product <span class="hidden"> - removeCollectionsFromProduct</span>
 
 ### _swat.removeCollectionsFromProduct(variantId, collectionsToRemove, callbackFn, errorFn)
 
@@ -120,7 +120,7 @@ Success callback<span>optional</span> | function | Success callback function whi
 Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
 
 
-## Remove products from a collection
+## Remove products from a collection <span class="hidden"> - removeProductsFromCollection</span>
 
 ### _swat.removeProductsFromCollection(collection, variantIdsToRemove, callbackFn, errorFn)
 
@@ -142,7 +142,7 @@ productsToRemove | array | An array of variant ids to remove
 Success callback<span>optional</span> | function | Success callback function which will be called upon successful response.
 Error callback<span>optional</span> | function | Error callback function which will be called if unsuccessful response.
 
-## Remove a collection
+## Remove a collection <span class="hidden"> - removeWishlistCollection</span>
 
 ### _swat.removeWishlistCollection(collection, callbackFn, errorFn)
 

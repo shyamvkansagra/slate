@@ -1,6 +1,6 @@
 # Wishlist button
 
-## Add to wishlist
+## Add to wishlist <span class="hidden"> - addToWishList</span>
 
 ### _swat.addToWishList(eventObject, callbackFn, noShowNotification<sub class="subscript">opt</sub>)
 
@@ -68,7 +68,7 @@ In the example, the request adds the product variant to the wishlist.
 Please note that the these parameters are mandatory ones (epi, empi, du and iu).
 
 
-## Remove from wishlist
+## Remove from wishlist <span class="hidden"> - removeFromWishList</span>
 
 ### _swat.removeFromWishList(eventObject, callbackFn)
 
@@ -101,7 +101,7 @@ For response | function | A callback function, which takes a single argument (JS
 
 In the example, removeFromWishList removes a previously added entry from the wish list.
 
-## Get all tracked products
+## Get all tracked products <span class="hidden"> - fetch</span>
 
 ### _swat.fetch(callbackFn)
 
@@ -174,7 +174,7 @@ Argument | Type | Description
 callbackFn | function | A callback function with a single argument, which is a  JSON response on success.
 
 
-## Initialize custom button
+## Initialize custom button <span class="hidden"> - initializeActionButtons</span>
 
 Let's say we have a custom button which should act as a wishlist button for a retailer. In this case, we need to add `data-swaction='addToWishlist'` or `data-swaction='addToWatchlist'` (depending on which app it is) attribute to that particular custom button HTML element on the retailer's store. We can use any custom selector as well if we don't want to use the `data-swaction`. Now, during run-time, all such buttons will be checked and initialized by Swym. In order to do that, we have to call this API: `initializeActionButtons`.
 
@@ -187,7 +187,7 @@ Argument | Type | Description
 containerSelector | string | A container selector which is parent of all such custom wishlist buttons
 selector<span>optional</span> | string | A selector for custom wishlist button, by default it is `data-swaction`
 
-## Trigger variant change
+## Trigger variant change <span class="hidden"> - triggerSwymVariantEvent</span>
 
 In Shopify, each product has multiple variants. In many stores, it is very important to capture events at a variant level, such as the variant id, variant price, variant stock, variant options, variant image, etc. The end user interacts with the product from the product details page, a collections page, a quick view popup or a widget of products. Swym provides support for managing events at product and variant levels for each of those scenarios. Find the detailed explanation below:
 

@@ -6,7 +6,7 @@ The [first commit] (https://github.com/saumitra2810/storefront-api-examples/comm
 
 The APIs below document all the APIs you will need to implement the complete platform functionality into your storefront.
 
-## Track pageview
+## Track pageview <span class="hidden"> - trackPageview</span>
 
 ### _swat.trackPageview(eventObject, callbackFn)
 
@@ -43,7 +43,7 @@ iu | string | Image-uri - Without protocol so protocol can be decided while rend
 pr | float | Price
 For response | function | A callback function, which takes a single argument (JSON response from the swym service)
 
-## Track add to cart event
+## Track add to cart event <span class="hidden"> - addToCart</span>
 
 ### _swat.addToCart(eventObj, callbackFn)
 
@@ -77,7 +77,7 @@ iu | string | Image-uri - Without protocol so protocol can be decided while rend
 pr | float | Price
 For response | function | A callback function, which takes a single argument (JSON response from the swym service)
 
-## Track purchase event
+## Track purchase event <span class="hidden"> - reportPurchase</span>
 
 ### _swat.reportPurchase(eventObj, callbackFn)
 
@@ -109,7 +109,7 @@ iu | string | Image-uri - Without protocol so protocol can be decided while rend
 pr | float | Price
 For response | function | A callback function, which takes a single argument (JSON response from the swym service)
 
-## Track drop from cart event
+## Track drop from cart event <span class="hidden"> - dropFromCart</span>
 
 ### _swat.dropFromCart(eventObject, callbackFn)
 
