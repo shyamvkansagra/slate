@@ -243,3 +243,22 @@ Argument | Type | Description
 eventsToUpdate | array | An array of objects containing the keys "epi" and "cprops" corresponding to the events that need to be updated
 successCallback | function | Function that gets called if the events are updated successfully
 errorCallback | function | Function that gets called if the update ran into an error
+
+
+## Wiring "View your Wishlist" in notification to custom wishlist page
+
+On adding a product to wishlist, you will see a fly-out notification. This notification has a "View your wishlist" CTA. By default, clicking on this button will either open up the Wishlist popup or redirect to the default Swym wishlist page, depending on your settings.
+
+If you are building a custom wishlist page, you will need to -
+
+1. Set the Wishlist page type to "hosted" from the Swym Dashboard.
+2. Override the redirect function as shown on the right.
+
+
+```javascript
+SwymUtils.getHostedURL = function(){
+   return "/pages/wishlist";               // your wishlist URL here
+};
+```
+
+Note: As with any Swym API call, please wrap this call in the [SwymCallbacks construct] (#introduction) to ensure it gets called only once Swym is ready.
