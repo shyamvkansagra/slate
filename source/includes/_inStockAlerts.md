@@ -9,7 +9,7 @@ When a product is out of stock and you want to show "Email me when available" su
 ```javascript
 window._swat.addToWatchList(
   clickEventObj,
-  { epi: 10, empi: 10, iu: "IMAGE_URL" },
+  { epi: 10, empi: 10, et: 8, iu: "IMAGE_URL" },     // event type 8 stands for registering a "notify me" event.
   function(r) {
     console.log("response", r);
   },
