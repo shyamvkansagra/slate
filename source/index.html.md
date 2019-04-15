@@ -2,7 +2,7 @@
 title: Swym JS API Info v2.0
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript
+  - JavaScript
 
 toc_footers:
   - <a href='https://swym.it/' target='_blank'>Visit our website</a>
@@ -21,6 +21,10 @@ includes:
 
 search: true
 ---
+
+<!-- <div class="intro">
+  <img src="https://swym.mystagingwebsite.com/wp-content/uploads/2019/03/Hex-Pattern-smaller.png" />
+</div> -->
 
 # Introduction
 

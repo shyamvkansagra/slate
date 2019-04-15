@@ -59,7 +59,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
 
   // language selector for mobile devices
@@ -208,6 +208,7 @@ html, body {
   transition-property: background;
   transition-timing-function: linear;
   transition-duration: 130ms;
+  font-weight: normal;
 }
 
 // button to show navigation on mobile devices
@@ -354,7 +355,7 @@ html, body {
     margin-top: 2em;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    background-color: #fff;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -631,4 +632,21 @@ h1, h2, h3 {
 
 .hidden {
   display: none;
+}
+
+.logo img {
+  max-width: 66%;
+}
+
+.intro {
+  margin-right: 50%;
+  background: white;
+}
+
+.intro img {
+  margin-bottom: 10px;
+  display: block;
+  min-width: 100%;
+  height: auto;
+  width: 100%;
 }
