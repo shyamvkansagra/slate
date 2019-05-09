@@ -270,12 +270,13 @@ Note: As with any Swym API call, please wrap this call in the [SwymCallbacks con
 
 Swym ships with a quick view popup implementation that can be invoked anywhere and for any product. You might want to use it for your custom wishlist page or for a wishlist on the cart page widget to allow users to choose the variant they want to add to cart or to read more about a product they care about.
 
-``javascript
+```javascript
 window._swat.ui.openProductDetails(
   2056554534059,
   "https://mystore.myshopify.com/product-url"
 );
 ```
+
 Argument | Type | Description
 --------- | ------- | -----------
 epi | Int | The variant id of the product needed to be shown
