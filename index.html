@@ -6,7 +6,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Swym JS API Info v2.0</title>
-
+    <link href="images/favicon.png" rel="icon" type="image/png" />
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -199,9 +199,19 @@
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-40168012-10"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'UA-40168012-10');
+    </script>
   </head>
 
-  <body class="index" data-languages="[&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;JavaScript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -209,9 +219,11 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" />
+      </div>
         <div class="lang-selector">
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="JavaScript">JavaScript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -228,19 +240,19 @@
             <a href="#wishlist-button" class="toc-h1 toc-link" data-title="Wishlist button">Wishlist button</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#add-to-wishlist" class="toc-h2 toc-link" data-title="Add to wishlist">Add to wishlist</a>
+                    <a href="#add-to-wishlist-addtowishlist" class="toc-h2 toc-link" data-title="Add to wishlist  - addToWishList">Add to wishlist <span class="hidden"> - addToWishList</span></a>
                   </li>
                   <li>
-                    <a href="#remove-from-wishlist" class="toc-h2 toc-link" data-title="Remove from wishlist">Remove from wishlist</a>
+                    <a href="#remove-from-wishlist-removefromwishlist" class="toc-h2 toc-link" data-title="Remove from wishlist  - removeFromWishList">Remove from wishlist <span class="hidden"> - removeFromWishList</span></a>
                   </li>
                   <li>
-                    <a href="#get-all-tracked-products" class="toc-h2 toc-link" data-title="Get all tracked products">Get all tracked products</a>
+                    <a href="#get-all-tracked-products-fetch" class="toc-h2 toc-link" data-title="Get all tracked products  - fetch">Get all tracked products <span class="hidden"> - fetch</span></a>
                   </li>
                   <li>
-                    <a href="#initialize-custom-button" class="toc-h2 toc-link" data-title="Initialize custom button">Initialize custom button</a>
+                    <a href="#initialize-custom-button-initializeactionbuttons" class="toc-h2 toc-link" data-title="Initialize custom button  - initializeActionButtons">Initialize custom button <span class="hidden"> - initializeActionButtons</span></a>
                   </li>
                   <li>
-                    <a href="#trigger-variant-change" class="toc-h2 toc-link" data-title="Trigger variant change">Trigger variant change</a>
+                    <a href="#trigger-variant-change-triggerswymvariantevent" class="toc-h2 toc-link" data-title="Trigger variant change  - triggerSwymVariantEvent">Trigger variant change <span class="hidden"> - triggerSwymVariantEvent</span></a>
                   </li>
               </ul>
           </li>
@@ -248,10 +260,10 @@
             <a href="#wishlist-count" class="toc-h1 toc-link" data-title="Wishlist count">Wishlist count</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-user-39-s-wishlist-count" class="toc-h2 toc-link" data-title="Get user's wishlist count">Get user's wishlist count</a>
+                    <a href="#get-user-39-s-wishlist-count-wishlistcount" class="toc-h2 toc-link" data-title="Get user's wishlist count  - wishlistCount">Get user's wishlist count <span class="hidden"> - wishlistCount</span></a>
                   </li>
                   <li>
-                    <a href="#render-user-39-s-wishlist-count" class="toc-h2 toc-link" data-title="Render user's wishlist count">Render user's wishlist count</a>
+                    <a href="#render-user-39-s-wishlist-count-renderwishlistcount" class="toc-h2 toc-link" data-title="Render user's wishlist count  - renderWishlistCount">Render user's wishlist count <span class="hidden"> - renderWishlistCount</span></a>
                   </li>
               </ul>
           </li>
@@ -262,25 +274,31 @@
                     <a href="#get-all-tracked-products" class="toc-h2 toc-link" data-title="Get all tracked products">Get all tracked products</a>
                   </li>
                   <li>
-                    <a href="#get-products-by-event-type" class="toc-h2 toc-link" data-title="Get products by event type">Get products by event type</a>
+                    <a href="#get-products-by-event-type-fetchwrteventtypeet" class="toc-h2 toc-link" data-title="Get products by event type  - fetchWrtEventTypeET">Get products by event type <span class="hidden"> - fetchWrtEventTypeET</span></a>
                   </li>
                   <li>
-                    <a href="#email-wishlist" class="toc-h2 toc-link" data-title="Email Wishlist">Email Wishlist</a>
+                    <a href="#email-wishlist-sendemailwishlist" class="toc-h2 toc-link" data-title="Email Wishlist  - sendEmailWishList">Email Wishlist <span class="hidden"> - sendEmailWishList</span></a>
                   </li>
                   <li>
-                    <a href="#add-product-to-cart" class="toc-h2 toc-link" data-title="Add product to cart">Add product to cart</a>
+                    <a href="#add-product-to-cart-replayaddtocart" class="toc-h2 toc-link" data-title="Add product to cart  - replayAddToCart">Add product to cart <span class="hidden"> - replayAddToCart</span></a>
                   </li>
                   <li>
-                    <a href="#get-complete-product-details" class="toc-h2 toc-link" data-title="Get complete product details">Get complete product details</a>
+                    <a href="#get-complete-product-details-getproductdetails" class="toc-h2 toc-link" data-title="Get complete product details  - getProductDetails">Get complete product details <span class="hidden"> - getProductDetails</span></a>
                   </li>
                   <li>
-                    <a href="#connect-device-to-email-address" class="toc-h2 toc-link" data-title="Connect device to email address">Connect device to email address</a>
+                    <a href="#connect-device-to-email-address-remoteauthrequest" class="toc-h2 toc-link" data-title="Connect device to email address  - remoteAuthRequest">Connect device to email address <span class="hidden"> - remoteAuthRequest</span></a>
                   </li>
                   <li>
-                    <a href="#check-if-device-has-an-associated-email" class="toc-h2 toc-link" data-title="Check if device has an associated email">Check if device has an associated email</a>
+                    <a href="#check-if-device-has-an-associated-email-authcheck" class="toc-h2 toc-link" data-title="Check if device has an associated email  - authCheck">Check if device has an associated email <span class="hidden"> - authCheck</span></a>
                   </li>
                   <li>
-                    <a href="#update-a-wishlist-event" class="toc-h2 toc-link" data-title="Update a wishlist event">Update a wishlist event</a>
+                    <a href="#update-a-wishlist-event-updatewishlistevent" class="toc-h2 toc-link" data-title="Update a wishlist event  - updateWishlistEvent">Update a wishlist event <span class="hidden"> - updateWishlistEvent</span></a>
+                  </li>
+                  <li>
+                    <a href="#wiring-quot-view-your-wishlist-quot-in-notification-to-custom-wishlist-page" class="toc-h2 toc-link" data-title="Wiring "View your Wishlist" in notification to custom wishlist page">Wiring "View your Wishlist" in notification to custom wishlist page</a>
+                  </li>
+                  <li>
+                    <a href="#invoking-the-swym-quick-view-lightweight-ui-popup-from-anywhere" class="toc-h2 toc-link" data-title="Invoking the Swym quick-view (lightweight ui) popup from anywhere">Invoking the Swym quick-view (lightweight ui) popup from anywhere</a>
                   </li>
               </ul>
           </li>
@@ -288,10 +306,10 @@
             <a href="#in-stock-alerts" class="toc-h1 toc-link" data-title="In-stock alerts">In-stock alerts</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#show-quot-email-me-when-available-quot-widget" class="toc-h2 toc-link" data-title="Show "Email me when available" widget">Show "Email me when available" widget</a>
+                    <a href="#show-quot-email-me-when-available-quot-widget-addtowatchlist" class="toc-h2 toc-link" data-title="Show "Email me when available" widget  - addToWatchList">Show "Email me when available" widget <span class="hidden"> - addToWatchList</span></a>
                   </li>
                   <li>
-                    <a href="#request-in-stock-alert-for-a-product" class="toc-h2 toc-link" data-title="Request in-stock alert for a product">Request in-stock alert for a product</a>
+                    <a href="#request-in-stock-alert-for-a-product-sendwatchlist" class="toc-h2 toc-link" data-title="Request in-stock alert for a product  - sendWatchlist">Request in-stock alert for a product <span class="hidden"> - sendWatchlist</span></a>
                   </li>
               </ul>
           </li>
@@ -299,25 +317,25 @@
             <a href="#collections-of-wishlist-premium" class="toc-h1 toc-link" data-title="Collections of Wishlist (Premium)">Collections of Wishlist (Premium)</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-products-for-a-collection" class="toc-h2 toc-link" data-title="Get products for a collection">Get products for a collection</a>
+                    <a href="#get-products-for-a-collection-fetchwishlistwrthashtag" class="toc-h2 toc-link" data-title="Get products for a collection  - fetchWishlistWRTHashtag">Get products for a collection <span class="hidden"> - fetchWishlistWRTHashtag</span></a>
                   </li>
                   <li>
-                    <a href="#add-collections-to-a-product" class="toc-h2 toc-link" data-title="Add collections to a product">Add collections to a product</a>
+                    <a href="#add-collections-to-a-product-addcollectionstoproduct" class="toc-h2 toc-link" data-title="Add collections to a product  - addCollectionsToProduct">Add collections to a product <span class="hidden"> - addCollectionsToProduct</span></a>
                   </li>
                   <li>
-                    <a href="#add-products-to-a-collections" class="toc-h2 toc-link" data-title="Add products to a collections">Add products to a collections</a>
+                    <a href="#add-products-to-a-collections-addproductstocollection" class="toc-h2 toc-link" data-title="Add products to a collections  - addProductsToCollection">Add products to a collections <span class="hidden"> - addProductsToCollection</span></a>
                   </li>
                   <li>
-                    <a href="#get-all-collections" class="toc-h2 toc-link" data-title="Get all collections">Get all collections</a>
+                    <a href="#get-all-collections-getallcollections" class="toc-h2 toc-link" data-title="Get all collections  - getAllCollections">Get all collections <span class="hidden"> - getAllCollections</span></a>
                   </li>
                   <li>
-                    <a href="#remove-collections-from-a-product" class="toc-h2 toc-link" data-title="Remove collections from a product">Remove collections from a product</a>
+                    <a href="#remove-collections-from-a-product-removecollectionsfromproduct" class="toc-h2 toc-link" data-title="Remove collections from a product  - removeCollectionsFromProduct">Remove collections from a product <span class="hidden"> - removeCollectionsFromProduct</span></a>
                   </li>
                   <li>
-                    <a href="#remove-products-from-a-collection" class="toc-h2 toc-link" data-title="Remove products from a collection">Remove products from a collection</a>
+                    <a href="#remove-products-from-a-collection-removeproductsfromcollection" class="toc-h2 toc-link" data-title="Remove products from a collection  - removeProductsFromCollection">Remove products from a collection <span class="hidden"> - removeProductsFromCollection</span></a>
                   </li>
                   <li>
-                    <a href="#remove-a-collection" class="toc-h2 toc-link" data-title="Remove a collection">Remove a collection</a>
+                    <a href="#remove-a-collection-removewishlistcollection" class="toc-h2 toc-link" data-title="Remove a collection  - removeWishlistCollection">Remove a collection <span class="hidden"> - removeWishlistCollection</span></a>
                   </li>
               </ul>
           </li>
@@ -325,10 +343,10 @@
             <a href="#social-sharing-of-wishlist-premium" class="toc-h1 toc-link" data-title="Social sharing of Wishlist (Premium)">Social sharing of Wishlist (Premium)</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#share-wishlist-on-social-media" class="toc-h2 toc-link" data-title="Share wishlist on social media">Share wishlist on social media</a>
+                    <a href="#share-wishlist-on-social-media-sharewishlistsocial" class="toc-h2 toc-link" data-title="Share wishlist on social media  - shareWishlistSocial">Share wishlist on social media <span class="hidden"> - shareWishlistSocial</span></a>
                   </li>
                   <li>
-                    <a href="#generate-shareable-wishlist-url" class="toc-h2 toc-link" data-title="Generate shareable wishlist URL">Generate shareable wishlist URL</a>
+                    <a href="#generate-shareable-wishlist-url-generatesharedwishlisturl" class="toc-h2 toc-link" data-title="Generate shareable wishlist URL  - generateSharedWishlistURL">Generate shareable wishlist URL <span class="hidden"> - generateSharedWishlistURL</span></a>
                   </li>
               </ul>
           </li>
@@ -355,16 +373,16 @@
             <a href="#custom-implementation" class="toc-h1 toc-link" data-title="Custom implementation">Custom implementation</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#track-pageview" class="toc-h2 toc-link" data-title="Track pageview">Track pageview</a>
+                    <a href="#track-pageview-trackpageview" class="toc-h2 toc-link" data-title="Track pageview  - trackPageview">Track pageview <span class="hidden"> - trackPageview</span></a>
                   </li>
                   <li>
-                    <a href="#track-add-to-cart-event" class="toc-h2 toc-link" data-title="Track add to cart event">Track add to cart event</a>
+                    <a href="#track-add-to-cart-event-addtocart" class="toc-h2 toc-link" data-title="Track add to cart event  - addToCart">Track add to cart event <span class="hidden"> - addToCart</span></a>
                   </li>
                   <li>
-                    <a href="#track-purchase-event" class="toc-h2 toc-link" data-title="Track purchase event">Track purchase event</a>
+                    <a href="#track-purchase-event-reportpurchase" class="toc-h2 toc-link" data-title="Track purchase event  - reportPurchase">Track purchase event <span class="hidden"> - reportPurchase</span></a>
                   </li>
                   <li>
-                    <a href="#track-drop-from-cart-event" class="toc-h2 toc-link" data-title="Track drop from cart event">Track drop from cart event</a>
+                    <a href="#track-drop-from-cart-event-dropfromcart" class="toc-h2 toc-link" data-title="Track drop from cart event  - dropFromCart">Track drop from cart event <span class="hidden"> - dropFromCart</span></a>
                   </li>
               </ul>
           </li>
@@ -376,7 +394,10 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <!-- <div class="intro">
+  <img src="https://swym.mystagingwebsite.com/wp-content/uploads/2019/03/Hex-Pattern-smaller.png" />
+</div> -->
+<h1 id='introduction'>Introduction</h1>
 <p>Swym JS loads asynchronously to ensure it does not fall in site&#39;s critical loading path. To ensure all calls to Swym APIs are made only once Swym is loaded and ready, please wrap all calls to the API in a construct as shown on the right.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="kd">function</span> <span class="nx">swymCallbackFn</span><span class="p">(){</span>
    <span class="c1">// your API calls go here</span>
@@ -442,7 +463,7 @@
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
-<h1 id='wishlist-button'>Wishlist button</h1><h2 id='add-to-wishlist'>Add to wishlist</h2><h3 id='_swat-addtowishlist-eventobject-callbackfn-noshownotificationopt'>_swat.addToWishList(eventObject, callbackFn, noShowNotification<sub class="subscript">opt</sub>)</h3><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishList</span><span class="p">(</span>
+<h1 id='wishlist-button'>Wishlist button</h1><h2 id='add-to-wishlist-addtowishlist'>Add to wishlist <span class="hidden"> - addToWishList</span></h2><h3 id='_swat-addtowishlist-eventobject-callbackfn-noshownotificationopt'>_swat.addToWishList(eventObject, callbackFn, noShowNotification<sub class="subscript">opt</sub>)</h3><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWishList</span><span class="p">(</span>
   <span class="p">{</span>
     <span class="s2">"epi"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
     <span class="s2">"du"</span><span class="p">:</span> <span class="s2">"https://yourstore.com/products/your-awesome-product"</span><span class="p">,</span>
@@ -541,7 +562,7 @@
 
 <p>In the example, the request adds the product variant to the wishlist.
 Please note that the these parameters are mandatory ones (epi, empi, du and iu).</p>
-<h2 id='remove-from-wishlist'>Remove from wishlist</h2><h3 id='_swat-removefromwishlist-eventobject-callbackfn'>_swat.removeFromWishList(eventObject, callbackFn)</h3>
+<h2 id='remove-from-wishlist-removefromwishlist'>Remove from wishlist <span class="hidden"> - removeFromWishList</span></h2><h3 id='_swat-removefromwishlist-eventobject-callbackfn'>_swat.removeFromWishList(eventObject, callbackFn)</h3>
 <p>Removes a previously added wishlist event. Please refer to the example. You can call this method once the <code>window._swat</code> object is initialized. This API can be used for the same scenarios as <code>addToWishList</code>.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeFromWishList</span><span class="p">(</span>
   <span class="p">{</span>
@@ -593,7 +614,7 @@ Please note that the these parameters are mandatory ones (epi, empi, du and iu).
 </tbody></table>
 
 <p>In the example, removeFromWishList removes a previously added entry from the wish list.</p>
-<h2 id='get-all-tracked-products'>Get all tracked products</h2><h3 id='_swat-fetch-callbackfn'>_swat.fetch(callbackFn)</h3>
+<h2 id='get-all-tracked-products-fetch'>Get all tracked products <span class="hidden"> - fetch</span></h2><h3 id='_swat-fetch-callbackfn'>_swat.fetch(callbackFn)</h3>
 <blockquote>
 <p>Example request</p>
 </blockquote>
@@ -669,7 +690,7 @@ Please note that the these parameters are mandatory ones (epi, empi, du and iu).
 <td>A callback function with a single argument, which is a  JSON response on success.</td>
 </tr>
 </tbody></table>
-<h2 id='initialize-custom-button'>Initialize custom button</h2>
+<h2 id='initialize-custom-button-initializeactionbuttons'>Initialize custom button <span class="hidden"> - initializeActionButtons</span></h2>
 <p>Let&#39;s say we have a custom button which should act as a wishlist button for a retailer. In this case, we need to add <code>data-swaction=&#39;addToWishlist&#39;</code> or <code>data-swaction=&#39;addToWatchlist&#39;</code> (depending on which app it is) attribute to that particular custom button HTML element on the retailer&#39;s store. We can use any custom selector as well if we don&#39;t want to use the <code>data-swaction</code>. Now, during run-time, all such buttons will be checked and initialized by Swym. In order to do that, we have to call this API: <code>initializeActionButtons</code>.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">initializeActionButtons</span><span class="p">(</span><span class="s1">'.product-grid'</span><span class="p">,</span> <span class="s1">'[my-custom-wishlist-btn]'</span><span class="p">);</span>
 </code></pre>
@@ -691,7 +712,7 @@ Please note that the these parameters are mandatory ones (epi, empi, du and iu).
 <td>A selector for custom wishlist button, by default it is <code>data-swaction</code></td>
 </tr>
 </tbody></table>
-<h2 id='trigger-variant-change'>Trigger variant change</h2>
+<h2 id='trigger-variant-change-triggerswymvariantevent'>Trigger variant change <span class="hidden"> - triggerSwymVariantEvent</span></h2>
 <p>In Shopify, each product has multiple variants. In many stores, it is very important to capture events at a variant level, such as the variant id, variant price, variant stock, variant options, variant image, etc. The end user interacts with the product from the product details page, a collections page, a quick view popup or a widget of products. Swym provides support for managing events at product and variant levels for each of those scenarios. Find the detailed explanation below:</p>
 
 <p>For a product details page - Let’s take the “onload” and “afterload”  scenarios and break it down to use cases -</p>
@@ -728,7 +749,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
   window.SwymCallbacks.push(swymCallbackFn);
 ```
  -->
-<h1 id='wishlist-count'>Wishlist count</h1><h2 id='get-user-39-s-wishlist-count'>Get user&#39;s wishlist count</h2><h3 id='_swat-wishlistcount-callbackfn'>_swat.wishlistCount(callbackFn)</h3>
+<h1 id='wishlist-count'>Wishlist count</h1><h2 id='get-user-39-s-wishlist-count-wishlistcount'>Get user&#39;s wishlist count <span class="hidden"> - wishlistCount</span></h2><h3 id='_swat-wishlistcount-callbackfn'>_swat.wishlistCount(callbackFn)</h3>
 <p>Get the current count of wishlist.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">wishlistCount</span><span class="p">(</span>
   <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
@@ -749,7 +770,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>A callback function which receives a single argument, which is the number of wishlist items for the user</td>
 </tr>
 </tbody></table>
-<h2 id='render-user-39-s-wishlist-count'>Render user&#39;s wishlist count</h2><h3 id='_swat-renderwishlistcount-anchordomelem-callbackfn-timeoutopt'>_swat.renderWishlistCount(anchorDomElem, callbackFn, timeout<sub class="subscript">opt</sub>)</h3>
+<h2 id='render-user-39-s-wishlist-count-renderwishlistcount'>Render user&#39;s wishlist count <span class="hidden"> - renderWishlistCount</span></h2><h3 id='_swat-renderwishlistcount-anchordomelem-callbackfn-timeoutopt'>_swat.renderWishlistCount(anchorDomElem, callbackFn, timeout<sub class="subscript">opt</sub>)</h3>
 <p>In order to render the number of wishlisted items (generally on swym&#39;s anchor/launcher) use this API. We can also attach it to custom element. Manual style modification might be needed in that case.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">renderWishlistCount</span><span class="p">(</span><span class="nx">anchorElem</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.swym-anchor-badge'</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cnt</span><span class="p">,</span> <span class="nx">elem</span><span class="p">){</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"renderWishlistCount was called"</span><span class="p">,</span> <span class="nx">cnt</span><span class="p">,</span> <span class="nx">elem</span><span class="p">);</span>
@@ -780,7 +801,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 </tbody></table>
 <h1 id='custom-wishlist-page'>Custom wishlist page</h1><h2 id='get-all-tracked-products'>Get all tracked products</h2>
 <p>Same as <a href="#get-all-tracked-products">fetch</a>.</p>
-<h2 id='get-products-by-event-type'>Get products by event type</h2><h3 id='_swat-fetchwrteventtypeet-callbackfn-eventtype'>_swat.fetchWrtEventTypeET(callbackFn, eventType)</h3>
+<h2 id='get-products-by-event-type-fetchwrteventtypeet'>Get products by event type <span class="hidden"> - fetchWrtEventTypeET</span></h2><h3 id='_swat-fetchwrteventtypeet-callbackfn-eventtype'>_swat.fetchWrtEventTypeET(callbackFn, eventType)</h3>
 <p>Fetch the items based on a filter from the swym service.  The set of events fetched from the swym service is sorted by date (reverse chronological).  You can call this method once the window._swat object is initialized. This is used to fetch wishlist items, please see the example.</p>
 
 <blockquote>
@@ -865,7 +886,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>enum Reference</td>
 </tr>
 </tbody></table>
-<h2 id='email-wishlist'>Email Wishlist</h2><h3 id='_swat-sendemailwishlist-callbackfn-toemailid-fromname-note-hashtagopt'>_swat.sendEmailWishList(callbackFn, toEmailId, fromName, note, hashtag<sub class="subscript">opt</sub>)</h3>
+<h2 id='email-wishlist-sendemailwishlist'>Email Wishlist <span class="hidden"> - sendEmailWishList</span></h2><h3 id='_swat-sendemailwishlist-callbackfn-toemailid-fromname-note-hashtagopt'>_swat.sendEmailWishList(callbackFn, toEmailId, fromName, note, hashtag<sub class="subscript">opt</sub>)</h3>
 <p>Sends an email with the wishlist contents of the current user to a given email id.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">sendEmailWishList</span><span class="p">(</span>
   <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
@@ -909,7 +930,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>If collections of wishlist is used, a particular collection name that needs to be shared</td>
 </tr>
 </tbody></table>
-<h2 id='add-product-to-cart'>Add product to cart</h2><h3 id='_swat-replayaddtocart-productjson-variantid-callbackfn-errorfn'>_swat.replayAddToCart(productJson, variantId, callbackFn, errorFn)</h3>
+<h2 id='add-product-to-cart-replayaddtocart'>Add product to cart <span class="hidden"> - replayAddToCart</span></h2><h3 id='_swat-replayaddtocart-productjson-variantid-callbackfn-errorfn'>_swat.replayAddToCart(productJson, variantId, callbackFn, errorFn)</h3>
 <p>From your wishlist popup or page, when you want to add a product to the cart of the store, create your add to cart button (if you are using custom button) and call this API.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">replayAddToCart</span><span class="p">(</span>
   <span class="p">{</span><span class="na">empi</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span> <span class="na">du</span><span class="p">:</span> <span class="s2">"https://yourstore.com/products/your-another-awesome-product"</span><span class="p">},</span>
@@ -937,7 +958,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <tr>
 <td>epi</td>
 <td>integer</td>
-<td>epi of the product which will be added to cart</td>
+<td>variant id of the product which will be added to cart</td>
 </tr>
 <tr>
 <td>successFn</td>
@@ -950,7 +971,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>A function which will be called if case of any errors</td>
 </tr>
 </tbody></table>
-<h2 id='get-complete-product-details'>Get complete product details</h2><h3 id='_swat-getproductdetails-productobject-callbackfn-errorfn'>_swat.getProductDetails(productObject, callbackFn, errorFn)</h3>
+<h2 id='get-complete-product-details-getproductdetails'>Get complete product details <span class="hidden"> - getProductDetails</span></h2><h3 id='_swat-getproductdetails-productobject-callbackfn-errorfn'>_swat.getProductDetails(productObject, callbackFn, errorFn)</h3>
 <p>Let&#39;s say we want entire details about a product, which includes variants, stock level etc (all such info about product), then we can use this API which will return a productJson object on successful call.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">getProductDetails</span><span class="p">(</span>
   <span class="nx">params</span><span class="p">,</span>
@@ -985,7 +1006,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>A function which will be called if case of any errors</td>
 </tr>
 </tbody></table>
-<h2 id='connect-device-to-email-address'>Connect device to email address</h2><h3 id='_swat-remoteauthrequest-callbackfn-errorfn-toemailid'>_swat.remoteAuthRequest(callbackFn, errorFn, toEmailId)</h3>
+<h2 id='connect-device-to-email-address-remoteauthrequest'>Connect device to email address <span class="hidden"> - remoteAuthRequest</span></h2><h3 id='_swat-remoteauthrequest-callbackfn-errorfn-toemailid'>_swat.remoteAuthRequest(callbackFn, errorFn, toEmailId)</h3>
 <p>Request  the swym service to send a one time email validation link. A mail will be sent on the email address which is given as argument to this API. Upon clicking &quot;Confirm&quot;, user will be redirected to site and authenticated.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">remoteAuthRequest</span><span class="p">(</span>
   <span class="kd">function</span><span class="p">(</span><span class="nx">resp</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resp</span><span class="p">);</span> <span class="p">},</span>
@@ -1016,7 +1037,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>A valid email address</td>
 </tr>
 </tbody></table>
-<h2 id='check-if-device-has-an-associated-email'>Check if device has an associated email</h2><h3 id='_swat-authcheck-callbackfn'>_swat.authCheck(callbackFn)</h3>
+<h2 id='check-if-device-has-an-associated-email-authcheck'>Check if device has an associated email <span class="hidden"> - authCheck</span></h2><h3 id='_swat-authcheck-callbackfn'>_swat.authCheck(callbackFn)</h3>
 <blockquote>
 <p>Example request</p>
 </blockquote>
@@ -1057,7 +1078,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>A callback function with a single argument, which is a  JSON response called by authCheck.</td>
 </tr>
 </tbody></table>
-<h2 id='update-a-wishlist-event'>Update a wishlist event</h2><h3 id='_swat-updatewishlistevent-eventstoupdate-callbackfn-errorfn'>_swat.updateWishlistEvent(eventsToUpdate, callbackFn, errorFn)</h3>
+<h2 id='update-a-wishlist-event-updatewishlistevent'>Update a wishlist event <span class="hidden"> - updateWishlistEvent</span></h2><h3 id='_swat-updatewishlistevent-eventstoupdate-callbackfn-errorfn'>_swat.updateWishlistEvent(eventsToUpdate, callbackFn, errorFn)</h3>
 <p>Allows updating &quot;cprops&quot; parameter for an array of events. More info on &quot;cprops&quot; is <a href="#json-key-reference-for-sending-pageview-wishlist-cart-events">here</a>.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">updateWishlistEvent</span><span class="p">(</span>
   <span class="p">[</span>
@@ -1093,11 +1114,50 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>Function that gets called if the update ran into an error</td>
 </tr>
 </tbody></table>
-<h1 id='in-stock-alerts'>In-stock alerts</h1><h2 id='show-quot-email-me-when-available-quot-widget'>Show &quot;Email me when available&quot; widget</h2><h3 id='_swat-addtowatchlist-clickevent-eventmap-callbackfn-renderintonodeopt'>_swat.addToWatchList(clickEvent, eventMap, callbackFn, renderIntoNode<sub class="subscript">opt</sub>)</h3>
+<h2 id='wiring-quot-view-your-wishlist-quot-in-notification-to-custom-wishlist-page'>Wiring &quot;View your Wishlist&quot; in notification to custom wishlist page</h2>
+<p>On adding a product to wishlist, you will see a fly-out notification. This notification has a &quot;View your wishlist&quot; CTA. By default, clicking on this button will either open up the Wishlist popup or redirect to the default Swym wishlist page, depending on your settings.</p>
+
+<p>If you are building a custom wishlist page, you will need to -</p>
+
+<ol>
+<li>Set the &quot;Display the Wishlist module as&quot; setting to &quot;Separate page&quot; in the Swym Dashboard.</li>
+<li>Override the redirect function as shown on the right.</li>
+</ol>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">SwymUtils</span><span class="p">.</span><span class="nx">getHostedURL</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+   <span class="k">return</span> <span class="s2">"/pages/wishlist"</span><span class="p">;</span>               <span class="c1">// your wishlist URL here</span>
+<span class="p">};</span>
+</code></pre>
+<p>Note: As with any Swym API call, please wrap this call in the <a href="#introduction">SwymCallbacks construct</a> to ensure it gets called only once Swym is ready.</p>
+<h2 id='invoking-the-swym-quick-view-lightweight-ui-popup-from-anywhere'>Invoking the Swym quick-view (lightweight ui) popup from anywhere</h2><h3 id='_swat-ui-openproductdetails-epi-du'>_swat.ui.openProductDetails(epi, du)</h3>
+<p>Swym ships with a quick view popup implementation that can be invoked anywhere and for any product. You might want to use it for your custom wishlist page or for a wishlist on the cart page widget to allow users to choose the variant they want to add to cart or to read more about a product they care about.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">openProductDetails</span><span class="p">(</span>
+  <span class="mi">2056554534059</span><span class="p">,</span>
+  <span class="s2">"https://mystore.myshopify.com/product-url"</span>
+<span class="p">);</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>epi</td>
+<td>Int</td>
+<td>The variant id of the product needed to be shown</td>
+</tr>
+<tr>
+<td>uri</td>
+<td>String</td>
+<td>The product URL</td>
+</tr>
+</tbody></table>
+<h1 id='in-stock-alerts'>In-stock alerts</h1><h2 id='show-quot-email-me-when-available-quot-widget-addtowatchlist'>Show &quot;Email me when available&quot; widget <span class="hidden"> - addToWatchList</span></h2><h3 id='_swat-addtowatchlist-clickevent-eventmap-callbackfn-renderintonodeopt'>_swat.addToWatchList(clickEvent, eventMap, callbackFn, renderIntoNode<sub class="subscript">opt</sub>)</h3>
 <p>When a product is out of stock and you want to show &quot;Email me when available&quot; subscription button, we can use this API to add a product to user&#39;s &quot;watchlist&quot;. Whenever product is back in stock, an email will be sent to user automatically if <code>addToWatchlist</code> was performed for that product for user.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addToWatchList</span><span class="p">(</span>
   <span class="nx">clickEventObj</span><span class="p">,</span>
-  <span class="p">{</span> <span class="na">epi</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">empi</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">iu</span><span class="p">:</span> <span class="s2">"IMAGE_URL"</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">epi</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">empi</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">et</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="na">iu</span><span class="p">:</span> <span class="s2">"IMAGE_URL"</span> <span class="p">},</span>     <span class="c1">// event type 8 stands for registering a "notify me" event.</span>
   <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"response"</span><span class="p">,</span> <span class="nx">r</span><span class="p">);</span>
   <span class="p">},</span>
@@ -1132,7 +1192,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>A DOM node where you want to show addToWatchlist as popup/inline form</td>
 </tr>
 </tbody></table>
-<h2 id='request-in-stock-alert-for-a-product'>Request in-stock alert for a product</h2><h3 id='_swat-sendwatchlist-mediumvalue-sendmedium-eventobject-callbackfn-errorfn-addtomailinglistopt'>_swat.sendWatchlist(mediumValue, sendMedium, eventObject, callbackFn, errorFn, addToMailingList<sub class="subscript">opt</sub>)</h3>
+<h2 id='request-in-stock-alert-for-a-product-sendwatchlist'>Request in-stock alert for a product <span class="hidden"> - sendWatchlist</span></h2><h3 id='_swat-sendwatchlist-mediumvalue-sendmedium-eventobject-callbackfn-errorfn-addtomailinglistopt'>_swat.sendWatchlist(mediumValue, sendMedium, eventObject, callbackFn, errorFn, addToMailingList<sub class="subscript">opt</sub>)</h3>
 <p>Sends an back-in-stock alert request to the Swym platform.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">sendWatchlist</span><span class="p">(</span>
   <span class="s2">"demo@demo.com"</span><span class="p">,</span>
@@ -1187,7 +1247,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 </tbody></table>
 <h1 id='collections-of-wishlist-premium'>Collections of Wishlist (Premium)</h1>
 <p>The Swym platform supports having multiple wishlists for a user, eg: my lounge, my bedroom, etc. or in case of fashion eg: my outdoor collection, my summer list, etc. These APIs are available on the premium plans, please contact us to enable these APIs for your installation.</p>
-<h2 id='get-products-for-a-collection'>Get products for a collection</h2><h3 id='_swat-fetchwishlistwrthashtag-callbackfn-hashtag'>_swat.fetchWishlistWRTHashtag(callbackFn, hashtag)</h3><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetchWishlistWRTHashtag</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">products</span><span class="p">){</span>
+<h2 id='get-products-for-a-collection-fetchwishlistwrthashtag'>Get products for a collection <span class="hidden"> - fetchWishlistWRTHashtag</span></h2><h3 id='_swat-fetchwishlistwrthashtag-callbackfn-hashtag'>_swat.fetchWishlistWRTHashtag(callbackFn, hashtag)</h3><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">fetchWishlistWRTHashtag</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">products</span><span class="p">){</span>
   <span class="c1">// Render products</span>
 <span class="p">},</span> <span class="s2">"Summer Collection"</span><span class="p">);</span>
 </code></pre>
@@ -1211,7 +1271,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <td>Name of the hashtag</td>
 </tr>
 </tbody></table>
-<h2 id='add-collections-to-a-product'>Add collections to a product</h2><h3 id='_swat-addcollectionstoproduct-variantid-collectionstoadd-callbackfn-errorfn'>_swat.addCollectionsToProduct(variantId, collectionsToAdd, callbackFn, errorFn)</h3>
+<h2 id='add-collections-to-a-product-addcollectionstoproduct'>Add collections to a product <span class="hidden"> - addCollectionsToProduct</span></h2><h3 id='_swat-addcollectionstoproduct-variantid-collectionstoadd-callbackfn-errorfn'>_swat.addCollectionsToProduct(variantId, collectionsToAdd, callbackFn, errorFn)</h3>
 <p>Add an array of collections to a product. When adding a product to wishlist, this API has to be called before calling <a href="#addtowishlist">addToWishlist</a> API.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addCollectionsToProduct</span><span class="p">(</span>
   <span class="nx">epi</span><span class="p">,</span> <span class="c1">// epi is the currently selected variant id</span>
@@ -1253,7 +1313,7 @@ When you are using the Swym Shopify app, the reference to swym.js is already ini
 <aside class="success">
 This should be followed by a call to addToWishlist. To retrieve the collection for a wishlisted product, every object has a property “hashtags” containing the array of collections set for the product.
 </aside>
-<h2 id='add-products-to-a-collections'>Add products to a collections</h2><h3 id='_swat-addproductstocollection-collection-variantidstoadd-callbackfn-errorfn'>_swat.addProductsToCollection(collection, variantIdsToAdd, callbackFn, errorFn)</h3>
+<h2 id='add-products-to-a-collections-addproductstocollection'>Add products to a collections <span class="hidden"> - addProductsToCollection</span></h2><h3 id='_swat-addproductstocollection-collection-variantidstoadd-callbackfn-errorfn'>_swat.addProductsToCollection(collection, variantIdsToAdd, callbackFn, errorFn)</h3>
 <p>Add a list of products to a collection.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">addProductsToCollection</span><span class="p">(</span>
   <span class="s2">"My Lounge"</span><span class="p">,</span>
@@ -1295,7 +1355,7 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 <aside class="success">
 This should be followed by a call to addToWishlist. To retrieve the collection for a wishlisted product, every object has a property “hashtags” containing the array of collections set for the product.
 </aside>
-<h2 id='get-all-collections'>Get all collections</h2><h3 id='_swat-getallcollections-callbackfn-bimmediateopt'>_swat.getAllCollections(callbackFn, bImmediate<sub class="subscript">opt</sub>)</h3>
+<h2 id='get-all-collections-getallcollections'>Get all collections <span class="hidden"> - getAllCollections</span></h2><h3 id='_swat-getallcollections-callbackfn-bimmediateopt'>_swat.getAllCollections(callbackFn, bImmediate<sub class="subscript">opt</sub>)</h3>
 <p>Gets all collections for the current user.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">getAllCollections</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">collections</span><span class="p">){</span>
   <span class="c1">// code to use the returned collections</span>
@@ -1323,7 +1383,7 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 <td>Boolean for whether to get all collections from in-memory cache or make an API call. If true, the API will return results. If false, the results will be returned to the callback function.</td>
 </tr>
 </tbody></table>
-<h2 id='remove-collections-from-a-product'>Remove collections from a product</h2><h3 id='_swat-removecollectionsfromproduct-variantid-collectionstoremove-callbackfn-errorfn'>_swat.removeCollectionsFromProduct(variantId, collectionsToRemove, callbackFn, errorFn)</h3>
+<h2 id='remove-collections-from-a-product-removecollectionsfromproduct'>Remove collections from a product <span class="hidden"> - removeCollectionsFromProduct</span></h2><h3 id='_swat-removecollectionsfromproduct-variantid-collectionstoremove-callbackfn-errorfn'>_swat.removeCollectionsFromProduct(variantId, collectionsToRemove, callbackFn, errorFn)</h3>
 <p>Remove a set of collections from a wishlisted product. Let’s say a product is added in some custom collections (product has hashtags) and we want to remove a product from some particular collections. Call this API and it will remove particular hashtags from a swym product’s data. Now, product will not be shown in those collections anymore.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeCollectionsFromProduct</span><span class="p">(</span>
   <span class="mi">141445464108</span><span class="p">,</span>
@@ -1360,7 +1420,7 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 <td>Error callback function which will be called if unsuccessful response.</td>
 </tr>
 </tbody></table>
-<h2 id='remove-products-from-a-collection'>Remove products from a collection</h2><h3 id='_swat-removeproductsfromcollection-collection-variantidstoremove-callbackfn-errorfn'>_swat.removeProductsFromCollection(collection, variantIdsToRemove, callbackFn, errorFn)</h3>
+<h2 id='remove-products-from-a-collection-removeproductsfromcollection'>Remove products from a collection <span class="hidden"> - removeProductsFromCollection</span></h2><h3 id='_swat-removeproductsfromcollection-collection-variantidstoremove-callbackfn-errorfn'>_swat.removeProductsFromCollection(collection, variantIdsToRemove, callbackFn, errorFn)</h3>
 <p>Remove an array of products from a collection.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeProductsFromCollection</span><span class="p">(</span>
   <span class="s2">"summer collection"</span><span class="p">,</span>
@@ -1397,7 +1457,7 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 <td>Error callback function which will be called if unsuccessful response.</td>
 </tr>
 </tbody></table>
-<h2 id='remove-a-collection'>Remove a collection</h2><h3 id='_swat-removewishlistcollection-collection-callbackfn-errorfn'>_swat.removeWishlistCollection(collection, callbackFn, errorFn)</h3>
+<h2 id='remove-a-collection-removewishlistcollection'>Remove a collection <span class="hidden"> - removeWishlistCollection</span></h2><h3 id='_swat-removewishlistcollection-collection-callbackfn-errorfn'>_swat.removeWishlistCollection(collection, callbackFn, errorFn)</h3>
 <p>Removes a wishlist collection.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">removeWishlistCollection</span><span class="p">(</span>
   <span class="s2">"Patio furniture"</span><span class="p">,</span>
@@ -1428,7 +1488,7 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 <td>Error callback function which will be called if unsuccessful response.</td>
 </tr>
 </tbody></table>
-<h1 id='social-sharing-of-wishlist-premium'>Social sharing of Wishlist (Premium)</h1><h2 id='share-wishlist-on-social-media'>Share wishlist on social media</h2><h3 id='_swat-sharewishlistsocial-hashtag-shareurltemplate-platform-note-errcallback'>_swat.shareWishlistSocial(hashtag, shareUrlTemplate, platform, note, errCallBack)</h3>
+<h1 id='social-sharing-of-wishlist-premium'>Social sharing of Wishlist (Premium)</h1><h2 id='share-wishlist-on-social-media-sharewishlistsocial'>Share wishlist on social media <span class="hidden"> - shareWishlistSocial</span></h2><h3 id='_swat-sharewishlistsocial-hashtag-shareurltemplate-platform-note-errcallback'>_swat.shareWishlistSocial(hashtag, shareUrlTemplate, platform, note, errCallBack)</h3>
 <p>This API creates the unique URL for a particular sharing platform and opens a new dialog in that platform to perform the sharing step. For eg., for facebook, the share page will be opened in a new window.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">shareWishlistSocial</span><span class="p">(</span>
   <span class="kc">null</span><span class="p">,</span>
@@ -1471,7 +1531,7 @@ This should be followed by a call to addToWishlist. To retrieve the collection f
 <td>Function that gets called if there is an error. Called with error message as argument.</td>
 </tr>
 </tbody></table>
-<h2 id='generate-shareable-wishlist-url'>Generate shareable wishlist URL</h2><h3 id='_swat-generatesharedwishlisturl-hashtag-callbackfn-errcallback'>_swat.generateSharedWishlistURL(hashtag, callbackFn, errCallBack)</h3>
+<h2 id='generate-shareable-wishlist-url-generatesharedwishlisturl'>Generate shareable wishlist URL <span class="hidden"> - generateSharedWishlistURL</span></h2><h3 id='_swat-generatesharedwishlisturl-hashtag-callbackfn-errcallback'>_swat.generateSharedWishlistURL(hashtag, callbackFn, errCallBack)</h3>
 <p>A lower level API that returns the unique wishlist URL that can be shared anywhere. This URL will return the user who clicks on it back to the site into the default share wishlist page. This page can be overridden from the retailer settings if need be.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">generateSharedWishlistURL</span><span class="p">(</span>
   <span class="kc">null</span><span class="p">,</span>
@@ -1622,7 +1682,7 @@ Shopify’s product handle only returns handle, if you are using liquid, try usi
 <p>The <a href="https://github.com/saumitra2810/storefront-api-examples/commit/ffda26ce8f559f54497e125c50e34dcb662dd945" title="Storefront changes commit">first commit</a> has all the changes necessary to get started with Swym APIs on a custom storefront on Bigcommerce / Magento or Shopify.</p>
 
 <p>The APIs below document all the APIs you will need to implement the complete platform functionality into your storefront.</p>
-<h2 id='track-pageview'>Track pageview</h2><h3 id='_swat-trackpageview-eventobject-callbackfn'>_swat.trackPageview(eventObject, callbackFn)</h3>
+<h2 id='track-pageview-trackpageview'>Track pageview <span class="hidden"> - trackPageview</span></h2><h3 id='_swat-trackpageview-eventobject-callbackfn'>_swat.trackPageview(eventObject, callbackFn)</h3>
 <p>Sends a page view event , by default. Specific information regarding the page is automatically collected and sent (if unspecified and detected from the page).  You can call this method once the <code>window._swat</code> object is initialized.</p>
 
 <p>This API can be called in below scenarios,</p>
@@ -1678,7 +1738,7 @@ Shopify’s product handle only returns handle, if you are using liquid, try usi
 <td>A callback function, which takes a single argument (JSON response from the swym service)</td>
 </tr>
 </tbody></table>
-<h2 id='track-add-to-cart-event'>Track add to cart event</h2><h3 id='_swat-addtocart-eventobj-callbackfn'>_swat.addToCart(eventObj, callbackFn)</h3>
+<h2 id='track-add-to-cart-event-addtocart'>Track add to cart event <span class="hidden"> - addToCart</span></h2><h3 id='_swat-addtocart-eventobj-callbackfn'>_swat.addToCart(eventObj, callbackFn)</h3>
 <p>Adds a new cart event. Please refer to the example. You can call this method once the <code>window._swat</code> object is initialized.</p>
 
 <aside class="notice">Note - This API does not add product to the cart, it registers an addToCart event for a product.</aside>
@@ -1731,7 +1791,7 @@ Shopify’s product handle only returns handle, if you are using liquid, try usi
 <td>A callback function, which takes a single argument (JSON response from the swym service)</td>
 </tr>
 </tbody></table>
-<h2 id='track-purchase-event'>Track purchase event</h2><h3 id='_swat-reportpurchase-eventobj-callbackfn'>_swat.reportPurchase(eventObj, callbackFn)</h3>
+<h2 id='track-purchase-event-reportpurchase'>Track purchase event <span class="hidden"> - reportPurchase</span></h2><h3 id='_swat-reportpurchase-eventobj-callbackfn'>_swat.reportPurchase(eventObj, callbackFn)</h3>
 <p>Adds a new purchase event. Please refer to the example. You can call this method once the <code>window._swat</code> object is initialized.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">reportPurchase</span><span class="p">(</span>
   <span class="p">{</span>
@@ -1782,7 +1842,7 @@ Shopify’s product handle only returns handle, if you are using liquid, try usi
 <td>A callback function, which takes a single argument (JSON response from the swym service)</td>
 </tr>
 </tbody></table>
-<h2 id='track-drop-from-cart-event'>Track drop from cart event</h2><h3 id='_swat-dropfromcart-eventobject-callbackfn'>_swat.dropFromCart(eventObject, callbackFn)</h3>
+<h2 id='track-drop-from-cart-event-dropfromcart'>Track drop from cart event <span class="hidden"> - dropFromCart</span></h2><h3 id='_swat-dropfromcart-eventobject-callbackfn'>_swat.dropFromCart(eventObject, callbackFn)</h3>
 <p>Adds a new removed from cart event. Please refer to the example. You can call this method once the <code>window._swat</code> object is initialized.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">_swat</span><span class="p">.</span><span class="nx">dropFromCart</span><span class="p">(</span>
   <span class="p">{</span>
@@ -1837,7 +1897,7 @@ Shopify’s product handle only returns handle, if you are using liquid, try usi
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="JavaScript">JavaScript</a>
           </div>
       </div>
     </div>
