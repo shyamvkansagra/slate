@@ -251,7 +251,7 @@ On adding a product to wishlist, you will see a fly-out notification. This notif
 
 If you are building a custom wishlist page, you will need to -
 
-1. Set the Wishlist page type to "hosted" from the Swym Dashboard.
+1. Set the "Display the Wishlist module as" setting to "Separate page" in the Swym Dashboard.
 2. Override the redirect function as shown on the right.
 
 
@@ -261,7 +261,7 @@ SwymUtils.getHostedURL = function(){
 };
 ```
 
-Note: As with any Swym API call, please wrap this call in the [SwymCallbacks construct] (#introduction) to ensure it gets called only once Swym is ready.
+Note: As with any Swym API call, please wrap this call in the [SwymCallbacks construct](#introduction) to ensure it gets called only once Swym is ready.
 
 
 ## Invoking the Swym quick-view (lightweight ui) popup from anywhere
