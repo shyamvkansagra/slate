@@ -22,9 +22,10 @@ iu | string | image-uri - Without protocol so protocol can be decided while rend
 ru | string | referrer-uri
 ct | string | category-type (Example; Womens Shoes)
 bt | string | brand-type (Example: Nike)
-epi | int/string | external product unique id (variant level if available)
-empi | int/string | external product master id (if there is a group product id with different variant ids)
+epi | int/string | product variant id (variant level if available)
+empi | int/string | product master id (if there is a group product id with different variant ids)
 qty | int | quantity
+pt  | string | product title
 stk | int | stock value
 variants | JSON | variants (Example - <code>[{"Black/blue": <<epi-value>>}])</code>
 cprops | object | custom parameter to add any custom data to the event. Fetch will return this data.

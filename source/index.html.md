@@ -1,8 +1,8 @@
 ---
 title: Swym JS API Info v2.0
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - JavaScript
+#language_tabs: # must be one of https://git.io/vQNgJ
+#  - JavaScript
 
 toc_footers:
   - <a href='https://swym.it/' target='_blank'>Visit our website</a>
@@ -18,6 +18,7 @@ includes:
   - enumReference
   - glossary
   - customImplementation
+  - restApis
 
 search: true
 ---

@@ -15,7 +15,7 @@ window._swat.deleteEvent(
 );
 ```
 
-Argument | Type | Description
+Fields | Type | Description
 --------- | ------- | -----------
 callbackFn | function | A callback function with a single argument, which is a  JSON response called by remoteAuthRequest
 id | string | An alphanumeric event id value
