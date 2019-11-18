@@ -42,7 +42,8 @@ window._swat.sendWatchlist(
     pr: 23
   },
   function(r) { console.log(r) },
-  function(e) { console.log(e) }
+  function(e) { console.log(e) },
+  1
 );
 ```
 
@@ -53,4 +54,4 @@ medium | string | What id is collected (currently 'email' supported)
 product | object | Object with keys - {"epi" (variant id), "empi" (product master id), "iu" (image url), "pr" (price)}
 callbackFn | function | Function that gets called after a successful HTTP API call
 errorFn | function | Function that gets called when an error occurs
-addToMailingList<span>optional</span> | boolean | Boolean to tell if user opted in or out from the mailing list (Note:- requires mailing list feature to be set up from Swym's end)
+addToMailingList<span>optional</span> | int | Possible values: 1(opted in) or 0(opted out), to tell if user will be added to the mailing list (Note:- requires mailing list feature to be set up from Swym's end)
