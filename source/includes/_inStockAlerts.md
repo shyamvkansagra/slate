@@ -1,4 +1,4 @@
-# In-stock alerts
+# Back In Stock Product Alerts
 
 ## Show "Email me when available" widget <span class="hidden"> - addToWatchList</span>
 

@@ -114,9 +114,9 @@ Field | Type | Description
 --------- | ------- | -----------
 epis | Array[object] | Array of variant ids of the products to be added to wishlist.
 
-## Subscribe to In-Stock Alerts on a product
+## Subscribe to Back In Stock Product Alerts on a product
 
-Using this API, you can subscribe users to in-stock alerts on products when they are currently out of stock. Please note, this only works if your inventory is managed by your e-commerce platform i.e. Shopify, Bigcommerce or Magento. You will also have to ensure on your end that the user is only able to subscribe to alerts on a product that's out of stock.
+Using this API, you can subscribe users to Back In Stock Product Alerts on products when they are currently out of stock. Please note, this only works if your inventory is managed by your e-commerce platform i.e. Shopify, Bigcommerce or Magento. You will also have to ensure on your end that the user is only able to subscribe to alerts on a product that's out of stock.
 
 ```shell:cURL
 curl -X POST \
