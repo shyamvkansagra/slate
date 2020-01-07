@@ -25,7 +25,7 @@ callbackFn | function | A callback function which will be called on success
 renderIntoNode<span>optional</span> | DOM node | A DOM node where you want to show addToWatchlist as popup/inline form
 
 
-## Request in-stock alert for a product <span class="hidden"> - sendWatchlist</span>
+## Request Back In Stock Product Alerts for a product <span class="hidden"> - sendWatchlist</span>
 
 ### _swat.sendWatchlist(mediumValue, sendMedium, eventObject, callbackFn, errorFn, addToMailingList<sub class="subscript">opt</sub>)
 
