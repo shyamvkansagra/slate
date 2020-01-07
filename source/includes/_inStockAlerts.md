@@ -1,4 +1,4 @@
-# In-stock alerts
+# Back in Stock Product Alerts
 
 ## Show "Email me when available" widget <span class="hidden"> - addToWatchList</span>
 
@@ -25,7 +25,7 @@ callbackFn | function | A callback function which will be called on success
 renderIntoNode<span>optional</span> | DOM node | A DOM node where you want to show addToWatchlist as popup/inline form
 
 
-## Request in-stock alert for a product <span class="hidden"> - sendWatchlist</span>
+## Request Back in Stock Product Alerts <span class="hidden"> - sendWatchlist</span>
 
 ### _swat.sendWatchlist(mediumValue, sendMedium, eventObject, callbackFn, errorFn, addToMailingList<sub class="subscript">opt</sub>)
 
