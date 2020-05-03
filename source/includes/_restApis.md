@@ -1,6 +1,6 @@
 # REST APIs (Premium)
 
-## Introduction
+## Intro
 
 In addition to our JavaScript SDK, Swym APIs are also available as REST endpoints. Developers can use these endpoints to integrate functionalities of the Swym platform in mobile apps, embedded devices, third-party software etc.
 
