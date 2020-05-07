@@ -19,7 +19,7 @@ window._swat.addToWishList(
     console.log('Added to wishlist');
   }
 );
-
+-------------------------------------------------------------------------------------
 // example with cprops and hashtags
 window._swat.addToWishList(
   {
@@ -37,6 +37,8 @@ window._swat.addToWishList(
     console.log('Added to wishlist');
   }
 );
+
+
 ```
 
 Adds a new wishlist event. Please refer to the example. You can call this method once the window._swat object is initialized. This API operates at the epi, i.e. product variant level as set by the store.

@@ -43,7 +43,7 @@ window._swat.generateSharedWishlistURL(
   null,
   function(data) { console.log(data); },     // returns the generated url
   function(data) { console.log(data); }
-;)
+);
 ```
 
 Argument | Type | Description

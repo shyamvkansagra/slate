@@ -1,6 +1,6 @@
 # REST APIs (Premium)
 
-## Introduction
+## Intro
 
 In addition to our JavaScript SDK, Swym APIs are also available as REST endpoints. Developers can use these endpoints to integrate functionalities of the Swym platform in mobile apps, embedded devices, third-party software etc.
 
@@ -98,7 +98,6 @@ Example response:
 ```
 {"message":"Product(s) added to user collection"}
 ```
-
 Using this API, you can add an array of products to a user's wishlist, given their email address.
 
 ### Query Parameters
@@ -114,9 +113,43 @@ Field | Type | Description
 --------- | ------- | -----------
 epis | Array[object] | Array of variant ids of the products to be added to wishlist.
 
-## Subscribe to In-Stock Alerts on a product
+## Remove a product from a  user's wishlist
 
-Using this API, you can subscribe users to in-stock alerts on products when they are currently out of stock. Please note, this only works if your inventory is managed by your e-commerce platform i.e. Shopify, Bigcommerce or Magento. You will also have to ensure on your end that the user is only able to subscribe to alerts on a product that's out of stock.
+```shell:cURL
+curl -X POST \
+  'http://YOUR_SWYM_ENDPOINT/storeadmin/user/remove-wishlist?useremail=demouser@demo.com' \
+  -H 'Authorization: Basic BASE64-ENCODING-OF-"username:password"' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d epis=%5B13585100865611%5D
+```
+```
+Example response:
+```
+```
+{"message":"Product(s) removed from user's collection"}
+```
+
+Using this API, you can remove an array of products from a user's wishlist, given their email address.
+
+Note: ensure the product is available in the user's wishlist before removing.
+
+### Query Parameters
+
+Field | Type | Description
+--------- | ------- | -----------
+useremail | string | The customer's email address
+appId <span>optional</span> | string | the type of client making this request. Defaults to "StoreadminApi". Can be "mobileApp" if app is making the request.
+
+### Request Body
+
+Field | Type | Description
+--------- | ------- | -----------
+epis | Array[variantid1, variantid2 ... variantidn] | Array of variant ids of the products to be added to wishlist.
+
+
+## Subscribe to Back In Stock Product Alerts on a product
+
+Using this API, you can subscribe users to Back In Stock Product Alerts on products when they are currently out of stock. Please note, this only works if your inventory is managed by your e-commerce platform i.e. Shopify, Bigcommerce or Magento. You will also have to ensure on your end that the user is only able to subscribe to alerts on a product that's out of stock.
 
 ```shell:cURL
 curl -X POST \

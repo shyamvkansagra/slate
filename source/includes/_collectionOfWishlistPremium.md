@@ -2,6 +2,36 @@
 
 The Swym platform supports having multiple wishlists for a user, eg: my lounge, my bedroom, etc. or in case of fashion eg: my outdoor collection, my summer list, etc. These APIs are available on the premium plans, please contact us to enable these APIs for your installation.
 
+
+## Render the Add to Wishlist Collections Pop up.
+
+### _swat.addToWishList(SwymPageData, callbackFn, false, variantInfo, {edit: true, evt: e});
+
+```javascript 
+window._swat.addToWishList(SwymPageData, function successCallBackFn(e) {
+	//wishlistButton.innerHTML = "Saved";
+	$('.your custom button').addClass('added');
+}, false, 
+variantInfo, 
+{
+	edit: true,
+	evt: e
+});
+```
+When we want to add a product to the various collections of wishlist or modify an existing collections, this addToWishlist API will render a pop-up for capturing user interaction. 
+The add to collections of wishlist are based on inputs and the hashtags are generated automatically based on user input if not found.
+if the hastags are pre-existing, the API performs an update event, to add the product to the existing collections.
+
+
+Argument | Type | Description
+--------- | ------- | -----------
+SwymPageData | Object | The product object that is intended to be added to wishlist.
+successCallBackFn | function | The success callback fn called from swym when the product is successfully added to the wishlist.
+noShowNotification | boolean | Boolean for should the slide-out notification be shown. By default, this argument is false and the notification is shown.
+variantInfo | The options shown in the rendered pop up - ie : "xl blue" (size , color ) 
+
+
+
 ## Get products for a collection <span class="hidden"> - fetchWishlistWRTHashtag</span>
 
 ### _swat.fetchWishlistWRTHashtag(callbackFn, hashtag)
