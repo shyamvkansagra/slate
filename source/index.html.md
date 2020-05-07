@@ -12,7 +12,7 @@ includes:
   - wishlistButton
   - wishlistCount
   - customWishlistPage
-  - inStockAlerts
+  - backInStockProductAlerts
   - collectionOfWishlistPremium
   - socialShareOfWishlistPremium
   - enumReference

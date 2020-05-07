@@ -98,7 +98,6 @@ Example response:
 ```
 {"message":"Product(s) added to user collection"}
 ```
-
 Using this API, you can add an array of products to a user's wishlist, given their email address.
 
 ### Query Parameters
@@ -113,6 +112,40 @@ appId <span>optional</span> | string | the type of client making this request. D
 Field | Type | Description
 --------- | ------- | -----------
 epis | Array[object] | Array of variant ids of the products to be added to wishlist.
+
+## Remove a product from a  user's wishlist
+
+```shell:cURL
+curl -X POST \
+  'http://YOUR_SWYM_ENDPOINT/storeadmin/user/remove-wishlist?useremail=demouser@demo.com' \
+  -H 'Authorization: Basic BASE64-ENCODING-OF-"username:password"' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d epis=%5B13585100865611%5D
+```
+```
+Example response:
+```
+```
+{"message":"Product(s) removed from user's collection"}
+```
+
+Using this API, you can remove an array of products from a user's wishlist, given their email address.
+
+Note: ensure the product is available in the user's wishlist before removing.
+
+### Query Parameters
+
+Field | Type | Description
+--------- | ------- | -----------
+useremail | string | The customer's email address
+appId <span>optional</span> | string | the type of client making this request. Defaults to "StoreadminApi". Can be "mobileApp" if app is making the request.
+
+### Request Body
+
+Field | Type | Description
+--------- | ------- | -----------
+epis | Array[variantid1, variantid2 ... variantidn] | Array of variant ids of the products to be added to wishlist.
+
 
 ## Subscribe to Back In Stock Product Alerts on a product
 
